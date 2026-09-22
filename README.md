@@ -14,7 +14,7 @@ O projeto também tem como foco reduzir problemas como perda de informações, r
 
 * Bruno Couto
 * Gabriel Bello
-* Thiago Moreira
+* Tiago Moreira
 * João Boquini
 * Heitor Costa
 
