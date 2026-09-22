@@ -5,6 +5,6 @@ Grupo 3
 -Bruno 
 -Gabriel
 -Heitor
--João Vitor Boquini
+-João Vitor Boquini 🥸
 -Tiago
 💻
