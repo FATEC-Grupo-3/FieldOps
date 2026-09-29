@@ -43,6 +43,7 @@ Tornar as inspeções de campo mais **rápidas, organizadas e confiáveis**, red
 * **Tiago Moreira**
 * **João Boquini**
 * **Heitor Costa**
+* **Felipe Souto**
 
 ---
 
