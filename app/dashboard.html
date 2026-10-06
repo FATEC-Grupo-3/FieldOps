@@ -1,1 +1,1241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FieldOps | Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Overlay mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand-icon">
+                <i class="bi bi-boxes"></i>
+            </div>
+
+            <div>
+                <h5>FieldOps</h5>
+                <span>Enterprise System</span>
+            </div>
+
+            <button
+                class="btn-close-sidebar d-lg-none"
+                id="closeSidebar"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+        <div class="sidebar-section-title">
+            MÓDULOS PRINCIPAIS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="#" class="nav-item active">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Visão geral</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-clipboard-check"></i>
+                <span>Inspeções</span>
+                <span class="nav-badge">14</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Agenda</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-folder2-open"></i>
+                <span>Modelos</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-gear-wide-connected"></i>
+                <span>Equipamentos</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-buildings"></i>
+                <span>Clientes</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Locais</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Não conformidades</span>
+                <span class="nav-badge danger">3</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-clock-history"></i>
+                <span>Histórico</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-people"></i>
+                <span>Usuários</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>v4.8.2-PROD</span>
+            </div>
+
+            <span class="security-status">
+                SEC-OK
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <div class="main-wrapper">
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu"
+                    id="openSidebar"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    Sincronização em tempo real
+                    <strong>Ativa</strong>
+                </div>
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar código, ativo, local..."
+                    >
+
+                    <kbd>CTRL K</kbd>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="unit-selector">
+                    <i class="bi bi-building"></i>
+
+                    <div>
+                        <small>Unidade</small>
+                        <strong>Complexo Industrial Sul</strong>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+
+                <button class="icon-button notification-button">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="profile-info">
+                        <strong>Eng. Marcos Silveira</strong>
+                        <small>Supervisor Técnico Sênior</small>
+                    </div>
+
+                    <div class="profile-avatar">
+                        MS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+        <main class="dashboard">
+
+            <!-- Page heading -->
+            <section class="page-header">
+
+                <div>
+
+                    <div class="breadcrumb-custom">
+                        Início
+                        <i class="bi bi-chevron-right"></i>
+                        Centro de Operações
+                        <i class="bi bi-chevron-right"></i>
+                        <strong>Visão Geral</strong>
+                    </div>
+
+                    <div class="page-title-row">
+
+                        <div>
+                            <h1>
+                                Centro de Operações
+                            </h1>
+
+                            <p>
+                                Monitoramento operacional em tempo real
+                            </p>
+                        </div>
+
+                        <div class="live-indicator">
+                            <span></span>
+                            SCADA conectado
+                            <strong>1s</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="page-actions">
+
+                    <select class="form-select">
+                        <option>Turno A — 06:00 às 14:00</option>
+                        <option>Turno B — 14:00 às 22:00</option>
+                        <option>Turno C — 22:00 às 06:00</option>
+                    </select>
+
+                    <select class="form-select">
+                        <option>Usina Guaíba & Filiais</option>
+                        <option>Complexo Petroquímico Triunfo</option>
+                        <option>Parque Eólico Osório</option>
+                    </select>
+
+                    <button class="btn btn-light-custom">
+                        <i class="bi bi-download"></i>
+                        Exportar
+                    </button>
+
+                    <button class="btn btn-primary-custom">
+                        <i class="bi bi-plus-lg"></i>
+                        Nova OS
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= KPIs ================= -->
+            <section class="row g-3 mb-4">
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>INSPEÇÕES HOJE</span>
+                            <i class="bi bi-clipboard-check"></i>
+                        </div>
+
+                        <div class="kpi-value">
+                            42
+                            <small>/ 48</small>
+                        </div>
+
+                        <div class="kpi-description">
+                            <span class="success-text">87,5% concluído</span>
+                            <span>6 pendentes</span>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-primary"
+                                style="width:87.5%"
+                            ></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>COLETORES EM CAMPO</span>
+                            <i class="bi bi-broadcast"></i>
+                        </div>
+
+                        <div class="kpi-value">
+                            14
+                            <small class="success-text">online</small>
+                        </div>
+
+                        <div class="kpi-description">
+                            <span>Mesh / 4G</span>
+                            <span class="success-text">0 offline</span>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-success"
+                                style="width:100%"
+                            ></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card danger-card">
+
+                        <div class="kpi-top">
+                            <span>NÃO CONFORMIDADES</span>
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </div>
+
+                        <div class="kpi-value">
+                            05
+                            <small>críticas</small>
+                        </div>
+
+                        <div class="kpi-description">
+                            <span>Bloqueio LOTO ativo</span>
+                            <strong>Ação imediata</strong>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-danger"
+                                style="width:80%"
+                            ></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>TEMPO MÉDIO — MTTR</span>
+                            <i class="bi bi-stopwatch"></i>
+                        </div>
+
+                        <div class="kpi-value">
+                            38
+                            <small>min</small>
+                        </div>
+
+                        <div class="kpi-description">
+                            <span class="success-text">-7 min vs meta</span>
+                            <span>SLA &lt; 45m</span>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-success"
+                                style="width:84%"
+                            ></div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card">
+
+                        <div class="kpi-top">
+                            <span>CONFIABILIDADE — OEE</span>
+                            <i class="bi bi-speedometer2"></i>
+                        </div>
+
+                        <div class="kpi-value">
+                            96,4%
+                        </div>
+
+                        <div class="kpi-description">
+                            <span class="success-text">+1,2% semanal</span>
+                            <span>Disp. 98,1%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-primary"
+                                style="width:96.4%"
+                            ></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- ================= GRID PRINCIPAL ================= -->
+            <div class="row g-4">
+
+                <!-- ================= COLUNA PRINCIPAL ================= -->
+                <div class="col-12 col-xl-8">
+
+                    <!-- Alertas -->
+                    <section class="dashboard-card mb-4">
+
+                        <div class="card-header-custom">
+
+                            <div>
+                                <div class="section-icon danger">
+                                    <i class="bi bi-shield-exclamation"></i>
+                                </div>
+
+                                <div>
+                                    <h2>Triagem crítica</h2>
+                                    <p>Alertas de segurança operacional</p>
+                                </div>
+                            </div>
+
+                            <span class="badge-danger-custom">
+                                3 ALERTAS
+                            </span>
+
+                        </div>
+
+
+                        <div class="alerts-list">
+
+                            <!-- ALERTA -->
+                            <div class="alert-item critical">
+
+                                <div class="alert-icon">
+                                    <i class="bi bi-activity"></i>
+                                </div>
+
+                                <div class="alert-content">
+
+                                    <div class="alert-title">
+
+                                        <strong>
+                                            Turbina SST-300
+                                        </strong>
+
+                                        <span>NC-0412</span>
+
+                                        <small>
+                                            Turbo-Geração Sul
+                                        </small>
+
+                                    </div>
+
+                                    <p>
+                                        Pico de vibração espectral
+                                        <strong>7.2 mm/s RMS</strong>
+                                        — limite ISO 10816 excedido.
+                                    </p>
+
+                                    <small class="critical-text">
+                                        Bloqueio LOTO solicitado às 07:18.
+                                    </small>
+
+                                </div>
+
+                                <div class="alert-action">
+
+                                    <span>14 MIN</span>
+
+                                    <button class="btn btn-primary-custom btn-sm">
+                                        Validar LOTO
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ALERTA -->
+                            <div class="alert-item warning">
+
+                                <div class="alert-icon">
+                                    <i class="bi bi-thermometer-high"></i>
+                                </div>
+
+                                <div class="alert-content">
+
+                                    <div class="alert-title">
+
+                                        <strong>
+                                            Caldeira CD-01
+                                        </strong>
+
+                                        <span>NC-0415</span>
+
+                                        <small>
+                                            Unidade Termelétrica
+                                        </small>
+
+                                    </div>
+
+                                    <p>
+                                        Desvio térmico no tubo de
+                                        superaquecimento
+                                        <strong>+18°C</strong>
+                                        acima do setpoint.
+                                    </p>
+
+                                    <small class="warning-text">
+                                        Vistoria técnica NR-13 necessária.
+                                    </small>
+
+                                </div>
+
+                                <div class="alert-action">
+
+                                    <span>28 MIN</span>
+
+                                    <button class="btn btn-light-custom btn-sm">
+                                        Despachar
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- ALERTA -->
+                            <div class="alert-item warning">
+
+                                <div class="alert-icon">
+                                    <i class="bi bi-lightning-charge"></i>
+                                </div>
+
+                                <div class="alert-content">
+
+                                    <div class="alert-title">
+
+                                        <strong>
+                                            Subestação Primária B
+                                        </strong>
+
+                                        <span>NC-0419</span>
+
+                                        <small>
+                                            Pátio de Alta Tensão
+                                        </small>
+
+                                    </div>
+
+                                    <p>
+                                        Ponto quente detectado na fase R
+                                        do disjuntor 230kV.
+                                    </p>
+
+                                    <small class="warning-text">
+                                        Inspeção termográfica agendada.
+                                    </small>
+
+                                </div>
+
+                                <div class="alert-action">
+
+                                    <span>42 MIN</span>
+
+                                    <button class="btn btn-light-custom btn-sm">
+                                        Ver análise
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Tabela -->
+                    <section class="dashboard-card mb-4">
+
+                        <div class="card-header-custom">
+
+                            <div>
+                                <div class="section-icon primary">
+                                    <i class="bi bi-kanban"></i>
+                                </div>
+
+                                <div>
+                                    <h2>Inspeções do turno</h2>
+                                    <p>Quadro operacional em tempo real</p>
+                                </div>
+                            </div>
+
+                            <div class="table-actions">
+                                <span>48 ordens</span>
+
+                                <button class="icon-button">
+                                    <i class="bi bi-sliders"></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-responsive">
+
+                            <table class="table operational-table">
+
+                                <thead>
+                                    <tr>
+                                        <th>OS</th>
+                                        <th>ATIVO</th>
+                                        <th>LOCAL</th>
+                                        <th>TÉCNICO</th>
+                                        <th>CHECKLIST</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>
+                                            <strong class="os-code">
+                                                #OS-8821
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                Compressor Atlas Copco
+                                            </strong>
+                                            <small>
+                                                TAG: CMP-AR-03
+                                            </small>
+                                        </td>
+
+                                        <td>
+                                            Pavilhão 02
+                                        </td>
+
+                                        <td>
+                                            Diego Souza
+                                        </td>
+
+                                        <td>
+                                            <div class="mini-progress">
+                                                <div style="width:75%"></div>
+                                            </div>
+
+                                            <small>24/32 — 75%</small>
+                                        </td>
+
+                                        <td>
+                                            <span class="status-badge running">
+                                                <span></span>
+                                                Em execução
+                                            </span>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <strong class="os-code">
+                                                #OS-8824
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                Transformador Auxiliar
+                                            </strong>
+                                            <small>
+                                                TAG: TR-AUX-01
+                                            </small>
+                                        </td>
+
+                                        <td>
+                                            Subestação Norte
+                                        </td>
+
+                                        <td>
+                                            Marcos Silveira
+                                        </td>
+
+                                        <td>
+                                            <div class="mini-progress success">
+                                                <div style="width:100%"></div>
+                                            </div>
+
+                                            <small>18/18 — 100%</small>
+                                        </td>
+
+                                        <td>
+                                            <span class="status-badge pending">
+                                                <span></span>
+                                                Validação
+                                            </span>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <strong class="os-code">
+                                                #OS-8819
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                Bomba Centrífuga
+                                            </strong>
+                                            <small>
+                                                TAG: BC-RES-04
+                                            </small>
+                                        </td>
+
+                                        <td>
+                                            Bacia 1
+                                        </td>
+
+                                        <td>
+                                            Leandro F.
+                                        </td>
+
+                                        <td>
+                                            <div class="mini-progress success">
+                                                <div style="width:100%"></div>
+                                            </div>
+
+                                            <small>15/15 — 100%</small>
+                                        </td>
+
+                                        <td>
+                                            <span class="status-badge completed">
+                                                <span></span>
+                                                Finalizada
+                                            </span>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>
+                                            <strong class="os-code">
+                                                #OS-8830
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                Ponte Rolante Demag
+                                            </strong>
+                                            <small>
+                                                TAG: PR-CALD-01
+                                            </small>
+                                        </td>
+
+                                        <td>
+                                            Caldeiraria
+                                        </td>
+
+                                        <td>
+                                            Roberto Mendes
+                                        </td>
+
+                                        <td>
+                                            <div class="mini-progress danger">
+                                                <div style="width:30%"></div>
+                                            </div>
+
+                                            <small>6/20 — 30%</small>
+                                        </td>
+
+                                        <td>
+                                            <span class="status-badge stopped">
+                                                <span></span>
+                                                Interrompida
+                                            </span>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Evidências -->
+                    <section class="dashboard-card">
+
+                        <div class="card-header-custom">
+
+                            <div>
+                                <div class="section-icon primary">
+                                    <i class="bi bi-camera"></i>
+                                </div>
+
+                                <div>
+                                    <h2>Evidências fotográficas</h2>
+                                    <p>Registros enviados durante o turno</p>
+                                </div>
+                            </div>
+
+                            <span class="header-counter">
+                                3 novos
+                            </span>
+
+                        </div>
+
+
+                        <div class="row g-3">
+
+                            <div class="col-12 col-md-4">
+
+                                <div class="photo-card">
+
+                                    <div class="photo-placeholder blue">
+                                        <i class="bi bi-speedometer2"></i>
+
+                                        <span>
+                                            TB-GEN-02-B
+                                        </span>
+                                    </div>
+
+                                    <div class="photo-info">
+                                        <strong>
+                                            Sensor de vibração
+                                        </strong>
+
+                                        <small>
+                                            Marcos Silveira • 07:16
+                                        </small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-12 col-md-4">
+
+                                <div class="photo-card">
+
+                                    <div class="photo-placeholder orange">
+                                        <i class="bi bi-lightning-charge"></i>
+
+                                        <span>
+                                            SE-PRI-230
+                                        </span>
+                                    </div>
+
+                                    <div class="photo-info">
+                                        <strong>
+                                            Disjuntor 230kV
+                                        </strong>
+
+                                        <small>
+                                            Roberto Mendes • 07:44
+                                        </small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-12 col-md-4">
+
+                                <div class="photo-card">
+
+                                    <div class="photo-placeholder purple">
+                                        <i class="bi bi-thermometer-half"></i>
+
+                                        <span>
+                                            BLR-CD-01
+                                        </span>
+                                    </div>
+
+                                    <div class="photo-info">
+                                        <strong>
+                                            Tubo superaquecimento
+                                        </strong>
+
+                                        <small>
+                                            Leandro F. • 08:02
+                                        </small>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- ================= SIDEBAR DIREITA ================= -->
+                <div class="col-12 col-xl-4">
+
+                    <!-- Equipes -->
+                    <section class="dashboard-card mb-4">
+
+                        <div class="card-header-custom">
+
+                            <div>
+                                <div class="section-icon primary">
+                                    <i class="bi bi-people"></i>
+                                </div>
+
+                                <div>
+                                    <h2>Equipes em campo</h2>
+                                    <p>Telemetria dos técnicos</p>
+                                </div>
+                            </div>
+
+                            <span class="online-badge">
+                                4 ativos
+                            </span>
+
+                        </div>
+
+
+                        <div class="team-list">
+
+                            <div class="team-item">
+
+                                <div class="team-avatar">
+                                    MS
+                                </div>
+
+                                <div class="team-info">
+                                    <strong>Marcos Silveira</strong>
+                                    <small>
+                                        Subestação Norte
+                                    </small>
+                                </div>
+
+                                <div class="battery good">
+                                    <i class="bi bi-battery-full"></i>
+                                    88%
+                                </div>
+
+                            </div>
+
+
+                            <div class="team-item">
+
+                                <div class="team-avatar blue">
+                                    DS
+                                </div>
+
+                                <div class="team-info">
+                                    <strong>Diego Souza</strong>
+                                    <small>
+                                        Pavilhão 02
+                                    </small>
+                                </div>
+
+                                <div class="battery good">
+                                    <i class="bi bi-battery-three-quarters"></i>
+                                    74%
+                                </div>
+
+                            </div>
+
+
+                            <div class="team-item">
+
+                                <div class="team-avatar purple">
+                                    LF
+                                </div>
+
+                                <div class="team-info">
+                                    <strong>Leandro F.</strong>
+                                    <small>
+                                        Bacia de Rejeitos
+                                    </small>
+                                </div>
+
+                                <div class="battery good">
+                                    <i class="bi bi-battery-full"></i>
+                                    92%
+                                </div>
+
+                            </div>
+
+
+                            <div class="team-item">
+
+                                <div class="team-avatar orange">
+                                    RM
+                                </div>
+
+                                <div class="team-info">
+                                    <strong>Roberto Mendes</strong>
+                                    <small>
+                                        Caldeiraria
+                                    </small>
+                                </div>
+
+                                <div class="battery warning">
+                                    <i class="bi bi-battery-quarter"></i>
+                                    24%
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- NC -->
+                    <section class="dashboard-card mb-4">
+
+                        <div class="card-header-custom">
+
+                            <div>
+                                <div class="section-icon primary">
+                                    <i class="bi bi-bar-chart"></i>
+                                </div>
+
+                                <div>
+                                    <h2>NCs por disciplina</h2>
+                                    <p>Distribuição das ocorrências</p>
+                                </div>
+                            </div>
+
+                            <strong class="total-nc">
+                                20
+                            </strong>
+
+                        </div>
+
+
+                        <div class="discipline-list">
+
+                            <div class="discipline">
+
+                                <div>
+                                    <span>Mecânica & Vibração</span>
+                                    <strong>45%</strong>
+                                </div>
+
+                                <div class="discipline-progress">
+                                    <div
+                                        class="blue"
+                                        style="width:45%"
+                                    ></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="discipline">
+
+                                <div>
+                                    <span>Elétrica & NR-10</span>
+                                    <strong>30%</strong>
+                                </div>
+
+                                <div class="discipline-progress">
+                                    <div
+                                        class="primary"
+                                        style="width:30%"
+                                    ></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="discipline">
+
+                                <div>
+                                    <span>Segurança & NR-13</span>
+                                    <strong>15%</strong>
+                                </div>
+
+                                <div class="discipline-progress">
+                                    <div
+                                        class="orange"
+                                        style="width:15%"
+                                    ></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="discipline">
+
+                                <div>
+                                    <span>Meio Ambiente</span>
+                                    <strong>10%</strong>
+                                </div>
+
+                                <div class="discipline-progress">
+                                    <div
+                                        class="gray"
+                                        style="width:10%"
+                                    ></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Atalhos -->
+                    <section class="dashboard-card">
+
+                        <div class="card-header-custom">
+
+                            <div>
+                                <div class="section-icon primary">
+                                    <i class="bi bi-lightning"></i>
+                                </div>
+
+                                <div>
+                                    <h2>Atalhos rápidos</h2>
+                                    <p>Ações de engenharia</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="shortcuts">
+
+                            <button class="shortcut">
+                                <i class="bi bi-file-earmark-plus"></i>
+
+                                <strong>
+                                    ART & Laudos
+                                </strong>
+
+                                <small>
+                                    CREA Integrado
+                                </small>
+                            </button>
+
+
+                            <button class="shortcut">
+                                <i class="bi bi-qr-code-scan"></i>
+
+                                <strong>
+                                    Consulta QR
+                                </strong>
+
+                                <small>
+                                    Leitor rápido
+                                </small>
+                            </button>
+
+
+                            <button class="shortcut danger">
+                                <i class="bi bi-lock"></i>
+
+                                <strong>
+                                    Protocolo LOTO
+                                </strong>
+
+                                <small>
+                                    Bloqueio ativo
+                                </small>
+                            </button>
+
+
+                            <button class="shortcut">
+                                <i class="bi bi-headset"></i>
+
+                                <strong>
+                                    Suporte NOC
+                                </strong>
+
+                                <small>
+                                    Ramal #4040
+                                </small>
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
 
