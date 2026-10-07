@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FieldOps | Clientes</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/clientes.css">
+</head>
+
+<body>
+
+    <!-- Overlay mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand-icon">
+                <i class="bi bi-boxes"></i>
+            </div>
+
+            <div>
+                <h5>FieldOps</h5>
+                <span>Enterprise System</span>
+            </div>
+
+            <button
+                class="btn-close-sidebar d-lg-none"
+                id="closeSidebar"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+        <div class="sidebar-section-title">
+            MÓDULOS PRINCIPAIS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="nav-item">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Visão geral</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-clipboard-check"></i>
+                <span>Inspeções</span>
+                <span class="nav-badge">14</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Agenda</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-folder2-open"></i>
+                <span>Modelos</span>
+            </a>
+
+            <a href="equipamentos.html" class="nav-item">
+                <i class="bi bi-gear-wide-connected"></i>
+                <span>Equipamentos</span>
+            </a>
+
+            <a href="clientes.html" class="nav-item active">
+                <i class="bi bi-buildings"></i>
+                <span>Clientes</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Locais</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Não conformidades</span>
+                <span class="nav-badge danger">3</span>
+            </a>
+
+            <a href="usuarios.html" class="nav-item">
+                <i class="bi bi-people"></i>
+                <span>Usuários</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>v4.8.2-PROD</span>
+            </div>
+
+            <span class="security-status">
+                SEC-OK
+            </span>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <div class="main-wrapper">
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu"
+                    id="openSidebar"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    Sincronização em tempo real
+                    <strong>Ativa</strong>
+                </div>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar cliente, CNPJ, local..."
+                    >
+                    <kbd>CTRL K</kbd>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="unit-selector">
+                    <i class="bi bi-building"></i>
+                    <div>
+                        <small>Unidade</small>
+                        <strong>Complexo Industrial Sul</strong>
+                    </div>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+
+                <button class="icon-button notification-button">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="profile">
+                    <div class="profile-info">
+                        <strong>Eng. Marcos Silveira</strong>
+                        <small>Supervisor Técnico Sênior</small>
+                    </div>
+                    <div class="profile-avatar">MS</div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ================= CONTEÚDO ================= -->
+        <main class="dashboard">
+
+            <!-- ===== HEADER DA PÁGINA ===== -->
+            <section class="page-header">
+
+                <div>
+
+                    <div class="breadcrumb-custom">
+                        Início
+                        <i class="bi bi-chevron-right"></i>
+                        Cadastros
+                        <i class="bi bi-chevron-right"></i>
+                        <strong>Clientes</strong>
+                    </div>
+
+                    <div class="page-title-row">
+                        <div>
+                            <h1>Gestão de Clientes</h1>
+                            <p>Cadastro, consulta e manutenção de clientes</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="page-actions">
+                    <button class="btn btn-light-custom">
+                        <i class="bi bi-download"></i>
+                        Exportar
+                    </button>
+                    <button class="btn btn-primary-custom">
+                        <i class="bi bi-plus-lg"></i>
+                        Novo cliente
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- ===== KPIs ===== -->
+            <section class="row g-3 mb-4">
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <span>CLIENTES ATIVOS</span>
+                            <i class="bi bi-buildings-fill"></i>
+                        </div>
+                        <div class="kpi-value">42</div>
+                        <div class="kpi-description">
+                            <span class="success-text">+3 este mês</span>
+                            <span>98% fidelidade</span>
+                        </div>
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-primary"
+                                style="width:98%"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <span>INSPEÇÕES CONTRATADAS</span>
+                            <i class="bi bi-clipboard-data"></i>
+                        </div>
+                        <div class="kpi-value">156</div>
+                        <div class="kpi-description">
+                            <span>Acumulado 2026</span>
+                            <span class="success-text">+12,4%</span>
+                        </div>
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-success"
+                                style="width:78%"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <span>LOCAIS CADASTRADOS</span>
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="kpi-value">128</div>
+                        <div class="kpi-description">
+                            <span>8 estados</span>
+                            <span>24 cidades</span>
+                        </div>
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-primary"
+                                style="width:64%"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl">
+                    <div class="kpi-card danger-card">
+                        <div class="kpi-top">
+                            <span>CONTRATOS A VENCER</span>
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </div>
+                        <div class="kpi-value">05
+                            <small>em 30 dias</small>
+                        </div>
+                        <div class="kpi-description">
+                            <span>Renovação pendente</span>
+                            <strong>Ação imediata</strong>
+                        </div>
+                        <div class="progress">
+                            <div
+                                class="progress-bar bg-danger"
+                                style="width:25%"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ===== FILTROS ===== -->
+            <section class="dashboard-card mb-4">
+
+                <div class="card-header-custom">
+                    <div>
+                        <div class="section-icon primary">
+                            <i class="bi bi-funnel-fill"></i>
+                        </div>
+                        <div>
+                            <h2>Filtros</h2>
+                            <p>Refine sua busca por clientes</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-link-custom">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        Limpar filtros
+                    </button>
+                </div>
+
+                <div class="row g-3 align-items-end">
+
+                    <div class="col-12 col-md-3">
+                        <label class="form-label-custom">Segmento</label>
+                        <select class="form-select form-select-custom">
+                            <option value="">Todos os segmentos</option>
+                            <option>Industrial</option>
+                            <option>Petroquímico</option>
+                            <option>Energia</option>
+                            <option>Alimentício</option>
+                            <option>Logística</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-3">
+                        <label class="form-label-custom">Status</label>
+                        <select class="form-select form-select-custom">
+                            <option value="">Todos os status</option>
+                            <option>Ativo</option>
+                            <option>Inativo</option>
+                            <option>Pendente</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-3">
+                        <label class="form-label-custom">Estado</label>
+                        <select class="form-select form-select-custom">
+                            <option value="">Todos os estados</option>
+                            <option>RS</option>
+                            <option>SP</option>
+                            <option>PR</option>
+                            <option>SC</option>
+                            <option>MG</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-3 d-flex gap-2">
+                        <button class="btn btn-primary-custom w-100">
+                            <i class="bi bi-search"></i>
+                            Aplicar
+                        </button>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ===== TABELA DE CLIENTES ===== -->
+            <section class="dashboard-card">
+
+                <div class="card-header-custom">
+                    <div>
+                        <div class="section-icon primary">
+                            <i class="bi bi-table"></i>
+                        </div>
+                        <div>
+                            <h2>Lista de clientes</h2>
+                            <p>Clientes cadastrados na plataforma</p>
+                        </div>
+                    </div>
+                    <span class="header-counter">
+                        42 registros
+                    </span>
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table operational-table">
+
+                        <thead>
+                            <tr>
+                                <th>CÓDIGO</th>
+                                <th>CLIENTE</th>
+                                <th>CNPJ</th>
+                                <th>SEGMENTO</th>
+                                <th>LOCAIS</th>
+                                <th>STATUS</th>
+                                <th>AÇÕES</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <strong class="os-code">CLI-0001</strong>
+                                </td>
+                                <td>
+                                    <strong>Petrobras Triunfo S.A.</strong>
+                                    <small>Contato: Ricardo Alves — (51) 3445-1234</small>
+                                </td>
+                                <td>92.693.301/0001-56</td>
+                                <td>Petroquímico</td>
+                                <td>
+                                    <strong>14</strong>
+                                    <small>4 unidades operacionais</small>
+                                </td>
+                                <td>
+                                    <span class="status-badge completed">
+                                        <span></span>
+                                        Ativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-actions justify-content-end">
+                                        <button class="icon-button" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="icon-button" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="icon-button" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong class="os-code">CLI-0002</strong>
+                                </td>
+                                <td>
+                                    <strong>Usina Guaíba Energia</strong>
+                                    <small>Contato: Fernanda Lima — (51) 3012-9876</small>
+                                </td>
+                                <td>18.459.123/0001-22</td>
+                                <td>Energia</td>
+                                <td>
+                                    <strong>08</strong>
+                                    <small>1 barragem + 7 subestações</small>
+                                </td>
+                                <td>
+                                    <span class="status-badge completed">
+                                        <span></span>
+                                        Ativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-actions justify-content-end">
+                                        <button class="icon-button" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="icon-button" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="icon-button" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong class="os-code">CLI-0003</strong>
+                                </td>
+                                <td>
+                                    <strong>Votorantim Cimentos</strong>
+                                    <small>Contato: Paulo Santos — (11) 3321-8877</small>
+                                </td>
+                                <td>61.234.789/0001-44</td>
+                                <td>Industrial</td>
+                                <td>
+                                    <strong>06</strong>
+                                    <small>2 fábricas + 4 centrais</small>
+                                </td>
+                                <td>
+                                    <span class="status-badge completed">
+                                        <span></span>
+                                        Ativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-actions justify-content-end">
+                                        <button class="icon-button" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="icon-button" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="icon-button" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong class="os-code">CLI-0004</strong>
+                                </td>
+                                <td>
+                                    <strong>BR Distribuidora — Polo Sul</strong>
+                                    <small>Contato: Carlos Ferreira — (51) 98765-2211</small>
+                                </td>
+                                <td>33.100.987/0001-11</td>
+                                <td>Logística</td>
+                                <td>
+                                    <strong>11</strong>
+                                    <small>6 bases + 5 pontos</small>
+                                </td>
+                                <td>
+                                    <span class="status-badge pending">
+                                        <span></span>
+                                        Pendente
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-actions justify-content-end">
+                                        <button class="icon-button" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="icon-button" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="icon-button" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong class="os-code">CLI-0005</strong>
+                                </td>
+                                <td>
+                                    <strong>Ambev — Unidade Canoas</strong>
+                                    <small>Contato: Mariana Costa — (51) 3522-0000</small>
+                                </td>
+                                <td>07.526.557/0001-00</td>
+                                <td>Alimentício</td>
+                                <td>
+                                    <strong>03</strong>
+                                    <small>1 fábrica + 2 armazéns</small>
+                                </td>
+                                <td>
+                                    <span class="status-badge completed">
+                                        <span></span>
+                                        Ativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-actions justify-content-end">
+                                        <button class="icon-button" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="icon-button" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="icon-button" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong class="os-code">CLI-0006</strong>
+                                </td>
+                                <td>
+                                    <strong>Parque Eólico Osório</strong>
+                                    <small>Contato: Rafael Nunes — (51) 3677-4000</small>
+                                </td>
+                                <td>22.334.112/0001-88</td>
+                                <td>Energia</td>
+                                <td>
+                                    <strong>21</strong>
+                                    <small>1 parque + 20 aerogeradores</small>
+                                </td>
+                                <td>
+                                    <span class="status-badge completed">
+                                        <span></span>
+                                        Ativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-actions justify-content-end">
+                                        <button class="icon-button" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="icon-button" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="icon-button" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong class="os-code">CLI-0007</strong>
+                                </td>
+                                <td>
+                                    <strong>CJ Logística S.A.</strong>
+                                    <small>Contato: André Rocha — (11) 2122-3333</small>
+                                </td>
+                                <td>47.112.338/0001-05</td>
+                                <td>Logística</td>
+                                <td>
+                                    <strong>09</strong>
+                                    <small>3 CD's + 6 operadores</small>
+                                </td>
+                                <td>
+                                    <span class="status-badge stopped">
+                                        <span></span>
+                                        Inativo
+                                    </span>
+                                </td>
+                                <td>
+                                    <div class="table-actions justify-content-end">
+                                        <button class="icon-button" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button class="icon-button" title="Editar">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button class="icon-button" title="Excluir">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- ===== PAGINAÇÃO ===== -->
+                <div class="row g-3 align-items-center justify-content-between mt-3">
+
+                    <div class="col-12 col-md-auto">
+                        <small class="text-muted">
+                            Mostrando <strong>7</strong> de <strong>42</strong> registros
+                        </small>
+                    </div>
+
+                    <div class="col-12 col-md-auto">
+                        <nav aria-label="Navegação de páginas">
+                            <ul class="pagination-custom">
+                                <li class="page-item disabled">
+                                    <button class="page-btn">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </button>
+                                </li>
+                                <li class="page-item active">
+                                    <button class="page-btn">1</button>
+                                </li>
+                                <li class="page-item">
+                                    <button class="page-btn">2</button>
+                                </li>
+                                <li class="page-item">
+                                    <button class="page-btn">3</button>
+                                </li>
+                                <li class="page-item">
+                                    <button class="page-btn">4</button>
+                                </li>
+                                <li class="page-item">
+                                    <button class="page-btn">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/clients.js"></script>
+
+</body>
+
+</html>
