@@ -1,0 +1,202 @@
+/* =========================
+   PLANEJAMENTO DE INSPEÇÃO
+   ========================= */
+
+.planning-card {
+    padding-bottom: 24px;
+}
+
+.planning-card form {
+    padding: 24px;
+}
+
+.planning-card .form-label {
+    margin-bottom: 8px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.planning-card .form-control,
+.planning-card .form-select {
+    min-height: 44px;
+    border-color: var(--border-dark);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13px;
+    box-shadow: none;
+}
+
+.planning-card textarea.form-control {
+    min-height: 112px;
+    resize: vertical;
+}
+
+.planning-card .form-control:focus,
+.planning-card .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(23, 71, 212, .1);
+}
+
+.planning-card .form-text {
+    margin-top: 7px;
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+.required-mark {
+    color: var(--danger);
+}
+
+.priority-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.priority-option {
+    min-width: 105px;
+    min-height: 42px;
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.priority-option:has(input:checked) {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.priority-option input {
+    accent-color: var(--primary);
+}
+
+.priority-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.priority-dot.low {
+    background: var(--success);
+}
+
+.priority-dot.medium {
+    background: var(--warning);
+}
+
+.priority-dot.high {
+    background: var(--danger);
+}
+
+.form-footer {
+    margin-top: 26px;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.required-info {
+    color: var(--text-light);
+    font-size: 11px;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.planning-tips {
+    padding: 8px 22px 22px;
+}
+
+.planning-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.planning-tip:last-child {
+    border-bottom: 0;
+}
+
+.planning-tip > i {
+    margin-top: 2px;
+    color: var(--primary);
+    font-size: 17px;
+}
+
+.planning-tip strong {
+    display: block;
+    color: var(--text);
+    font-size: 12px;
+}
+
+.planning-tip p {
+    margin: 5px 0 0;
+    color: var(--text-secondary);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.summary-placeholder {
+    min-height: 190px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.summary-placeholder i {
+    margin-bottom: 12px;
+    color: var(--text-light);
+    font-size: 28px;
+}
+
+.summary-placeholder strong {
+    color: var(--text);
+    font-size: 12px;
+}
+
+.summary-placeholder span {
+    max-width: 230px;
+    margin-top: 7px;
+    color: var(--text-light);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+@media (max-width: 575.98px) {
+    .planning-card form {
+        padding: 18px;
+    }
+
+    .form-footer {
+        align-items: stretch;
+    }
+
+    .form-actions {
+        width: 100%;
+    }
+
+    .form-actions .btn {
+        flex: 1;
+    }
+}
