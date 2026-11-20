@@ -232,7 +232,7 @@
                 <i class="bi bi-calendar-event"></i>
             </div>
 
-            <h2>18</h2>
+            <h2>128</h2>
             <span class="fo-stat-foot">Locais cadastrados</span>
         </div>
 
@@ -242,7 +242,7 @@
                 <i class="bi bi-arrow-repeat"></i>
             </div>
 
-            <h2>15</h2>
+            <h2>112</h2>
             <span class="fo-stat-foot">Disponíveis para inspeção</span>
         </div>
 
@@ -252,7 +252,7 @@
                 <i class="bi bi-clipboard-check"></i>
             </div>
 
-            <h2>03</h2>
+            <h2>10</h2>
             <span class="fo-stat-foot">Indisponíveis para inspeção</span>
         </div>
 
@@ -262,7 +262,7 @@
                 <i class="bi bi-check-circle"></i>
             </div>
 
-            <h2>02</h2>
+            <h2>06</h2>
             <span class="fo-stat-foot">Locais ativos com manutenção programada</span>
         </div>
 
@@ -285,285 +285,161 @@
 
         <div class="p-3">
             <div class="table-responsive">
+
+<div class="row g-3 mb-4">
+    <div class="col-md-6">
+        <input type="search" class="form-control"
+               placeholder="Buscar local...">
+    </div>
+
+    <div class="col-md-3">
+        <select class="form-select">
+            <option>Todos os clientes</option>
+            <option>Petrobras Triunfo S.A.</option>
+            <option>Usina Guaíba Energia</option>
+            <option>Votorantim Cimentos</option>
+            <option>BR Distribuidora — Polo Sul</option>
+            <option>Ambev — Unidade Canoas</option>
+            <option>Parque Eólico Osório</option>
+            <option>CJ Logística S.A.</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <select class="form-select">
+            <option>Todos os status</option>
+            <option>Ativo</option>
+            <option>Inativo</option>
+            <option>Em manutenção</option>
+        </select>
+    </div>
+</div>
+
                 <table class="table table-hover align-middle">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Código</th>
-                            <th>Local</th>
-                            <th>Endereço</th>
-                            <th>Responsável</th>
-                            <th>Situação</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>LOC-001</td>
-                            <td>Unidade Campinas</td>
-                            <td>Campinas - SP</td>
-                            <td>Carlos Silva</td>
-                            <td><span class="badge bg-success">Ativo</span></td>
-                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td>LOC-002</td>
-                            <td>Centro Operacional Itu</td>
-                            <td>Itu - SP</td>
-                            <td>Ana Oliveira</td>
-                            <td><span class="badge bg-success">Ativo</span></td>
-                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td>LOC-003</td>
-                            <td>Unidade Sorocaba</td>
-                            <td>Sorocaba - SP</td>
-                            <td>Marcos Pereira</td>
-                            <td><span class="badge bg-secondary">Inativo</span></td>
-                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
-                        </tr>
-                        <tr>
-                            <td>LOC-004</td>
-                            <td>Unidade Jundiaí</td>
-                            <td>Jundiaí - SP</td>
-                            <td>Fernanda Costa</td>
-                            <td><span class="badge bg-warning text-dark">Manutenção</span></td>
-                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
-                        </tr>
-                    </tbody>
+                    
+<thead class="table-light">
+    <tr>
+        <th>Código</th>
+        <th>Local</th>
+        <th>Cliente</th>
+        <th>Endereço</th>
+        <th>Responsável</th>
+        <th>Situação</th>
+        <th>Ações</th>
+    </tr>
+</thead>
+
+<tbody>
+    <tr>
+        <td>LOC-001</td>
+        <td>Unidade Campinas</td>
+        <td>Votorantim Cimentos</td>
+        <td>Campinas - SP</td>
+        <td>Carlos Silva</td>
+        <td><span class="badge bg-success">Ativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-002</td>
+        <td>Centro Operacional Itu</td>
+        <td>CJ Logística S.A.</td>
+        <td>Itu - SP</td>
+        <td>Ana Oliveira</td>
+        <td><span class="badge bg-success">Ativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-003</td>
+        <td>Unidade Sorocaba</td>
+        <td>Votorantim Cimentos</td>
+        <td>Sorocaba - SP</td>
+        <td>Marcos Pereira</td>
+        <td><span class="badge bg-secondary">Inativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-004</td>
+        <td>Unidade Jundiaí</td>
+        <td>CJ Logística S.A.</td>
+        <td>Jundiaí - SP</td>
+        <td>Fernanda Costa</td>
+        <td><span class="badge bg-warning text-dark">Em manutenção</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-005</td>
+        <td>Unidade Triunfo</td>
+        <td>Petrobras Triunfo S.A.</td>
+        <td>Triunfo - RS</td>
+        <td>Ricardo Alves</td>
+        <td><span class="badge bg-success">Ativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-006</td>
+        <td>Unidade Guaíba</td>
+        <td>Usina Guaíba Energia</td>
+        <td>Guaíba - RS</td>
+        <td>Fernanda Lima</td>
+        <td><span class="badge bg-success">Ativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-007</td>
+        <td>Polo Sul</td>
+        <td>BR Distribuidora — Polo Sul</td>
+        <td>Porto Alegre - RS</td>
+        <td>Carlos Ferreira</td>
+        <td><span class="badge bg-success">Ativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-008</td>
+        <td>Unidade Canoas</td>
+        <td>Ambev — Unidade Canoas</td>
+        <td>Canoas - RS</td>
+        <td>Mariana Costa</td>
+        <td><span class="badge bg-warning text-dark">Em manutenção</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-009</td>
+        <td>Unidade Osório</td>
+        <td>Parque Eólico Osório</td>
+        <td>Osório - RS</td>
+        <td>Rafael Nunes</td>
+        <td><span class="badge bg-success">Ativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+
+    <tr>
+        <td>LOC-010</td>
+        <td>Unidade São Paulo</td>
+        <td>Votorantim Cimentos</td>
+        <td>São Paulo - SP</td>
+        <td>Paulo Santos</td>
+        <td><span class="badge bg-success">Ativo</span></td>
+        <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+    </tr>
+</tbody>
+
                 </table>
-            </div>
-            <p class="text-muted small mt-3 mb-0">
-                Exibindo 4 registros de exemplo. Dados fictícios.
-            </p>
-        </div>
+            
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                <small class="text-muted">Exibindo 10 de 18 locais</small>
+                <small class="text-muted">Dados demonstrativos</small>
+    </div>
+
     </div>
 </section>
-
-
-    <!-- SEGUNDA LINHA -->
-    <section class="fo-secondary-grid">
-
-        <!-- NÃO CONFORMIDADES -->
-        <div class="fo-panel fo-nc-panel">
-
-            <div class="fo-panel-header">
-                <div>
-                    <span class="fo-eyebrow">OCORRÊNCIAS</span>
-                    <h2>Não conformidades</h2>
-                    <p>Distribuição por criticidade</p>
-                </div>
-
-                <div class="fo-nc-total">
-                    <strong>12</strong>
-                    <span>abertas</span>
-                </div>
-            </div>
-
-            <div class="fo-criticality">
-
-                <div class="fo-criticality-item">
-                    <div class="fo-criticality-info">
-                        <span class="fo-criticality-label">
-                            <span class="fo-dot critical"></span>
-                            Crítica
-                        </span>
-                        <strong>02</strong>
-                    </div>
-
-                    <div class="fo-bar">
-                        <div class="fo-bar-fill critical-fill" style="width: 17%"></div>
-                    </div>
-                </div>
-
-                <div class="fo-criticality-item">
-                    <div class="fo-criticality-info">
-                        <span class="fo-criticality-label">
-                            <span class="fo-dot high"></span>
-                            Alta
-                        </span>
-                        <strong>04</strong>
-                    </div>
-
-                    <div class="fo-bar">
-                        <div class="fo-bar-fill high-fill" style="width: 33%"></div>
-                    </div>
-                </div>
-
-                <div class="fo-criticality-item">
-                    <div class="fo-criticality-info">
-                        <span class="fo-criticality-label">
-                            <span class="fo-dot medium"></span>
-                            Média
-                        </span>
-                        <strong>03</strong>
-                    </div>
-
-                    <div class="fo-bar">
-                        <div class="fo-bar-fill medium-fill" style="width: 25%"></div>
-                    </div>
-                </div>
-
-                <div class="fo-criticality-item">
-                    <div class="fo-criticality-info">
-                        <span class="fo-criticality-label">
-                            <span class="fo-dot low"></span>
-                            Baixa
-                        </span>
-                        <strong>03</strong>
-                    </div>
-
-                    <div class="fo-bar">
-                        <div class="fo-bar-fill low-fill" style="width: 25%"></div>
-                    </div>
-                </div>
-
-            </div>
-
-            <a href="#" class="fo-panel-link">
-                Ver não conformidades
-                <i class="bi bi-arrow-right"></i>
-            </a>
-
-        </div>
-
-        <!-- ATALHOS -->
-        <div class="fo-panel fo-shortcuts-panel">
-
-            <div class="fo-panel-header">
-                <div>
-                    <span class="fo-eyebrow">ACESSO RÁPIDO</span>
-                    <h2>Atalhos</h2>
-                    <p>Principais ações do sistema.</p>
-                </div>
-            </div>
-
-            <div class="fo-shortcuts">
-
-                <a href="#" class="fo-shortcut">
-                    <div class="fo-shortcut-icon blue">
-                        <i class="bi bi-plus-square"></i>
-                    </div>
-
-                    <div>
-                        <strong>Nova inspeção</strong>
-                        <span>Agendar atividade</span>
-                    </div>
-
-                    <i class="bi bi-chevron-right fo-shortcut-arrow"></i>
-                </a>
-
-                <a href="#" class="fo-shortcut">
-                    <div class="fo-shortcut-icon amber">
-                        <i class="bi bi-clipboard2-check"></i>
-                    </div>
-
-                    <div>
-                        <strong>Revisar pendências</strong>
-                        <span>Ver inspeções recebidas</span>
-                    </div>
-
-                    <i class="bi bi-chevron-right fo-shortcut-arrow"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- INSPEÇÕES RECENTES -->
-    <section class="fo-panel fo-recent-panel">
-
-        <div class="fo-panel-header fo-recent-header">
-            <div>
-                <span class="fo-eyebrow">ACOMPANHAMENTO</span>
-                <h2>Inspeções recentes</h2>
-                <p>Últimas atividades registradas no sistema.</p>
-            </div>
-
-            <a href="#" class="fo-panel-link">
-                Ver todas
-                <i class="bi bi-arrow-right"></i>
-            </a>
-        </div>
-
-        <div class="table-responsive">
-            <table class="table fo-table">
-                <thead>
-                    <tr>
-                        <th>INSPEÇÃO</th>
-                        <th>EQUIPAMENTO</th>
-                        <th>RESPONSÁVEL</th>
-                        <th>DATA</th>
-                        <th>STATUS</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>
-                            <strong class="fo-inspection-code">INS-0248</strong>
-                        </td>
-                        <td>
-                            <strong>Compressor COMP-003</strong>
-                            <small>Unidade de Campinas</small>
-                        </td>
-                        <td>Lucas Ferreira</td>
-                        <td>19 nov, 09:42</td>
-                        <td>
-                            <span class="fo-status approved">Aprovada</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <strong class="fo-inspection-code">INS-0247</strong>
-                        </td>
-                        <td>
-                            <strong>Gerador GEN-012</strong>
-                            <small>Unidade de Sorocaba</small>
-                        </td>
-                        <td>João Mendes</td>
-                        <td>19 nov, 09:18</td>
-                        <td>
-                            <span class="fo-status reviewing">Em revisão</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <strong class="fo-inspection-code">INS-0246</strong>
-                        </td>
-                        <td>
-                            <strong>Bomba BMB-021</strong>
-                            <small>Unidade de Itu</small>
-                        </td>
-                        <td>Pedro Costa</td>
-                        <td>19 nov, 08:56</td>
-                        <td>
-                            <span class="fo-status correction">Correção</span>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <strong class="fo-inspection-code">INS-0245</strong>
-                        </td>
-                        <td>
-                            <strong>Painel PNL-008</strong>
-                            <small>Unidade de Campinas</small>
-                        </td>
-                        <td>Lucas Ferreira</td>
-                        <td>19 nov, 08:31</td>
-                        <td>
-                            <span class="fo-status running">Em andamento</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </section>
 
 </main>
 
