@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FieldOps | Revisão de Inspeção</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+</head>
+
+
+<body>
+
+    <!-- Overlay mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand-icon">
+                <i class="bi bi-boxes"></i>
+            </div>
+
+            <div>
+                <h5>FieldOps</h5>
+                <span>Enterprise System</span>
+            </div>
+
+            <button
+                class="btn-close-sidebar d-lg-none"
+                id="closeSidebar"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+        <div class="sidebar-section-title">
+            MÓDULOS PRINCIPAIS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Visão geral</span>
+            </a>
+
+            <a href="../acompanhamento/acompanhamento.html" class="nav-item active">
+                <i class="bi bi-clipboard-check"></i>
+                <span>Inspeções</span>
+                <span class="nav-badge">14</span>
+            </a>
+
+            <a href="../planejamento/planejamento.html" class="nav-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Agenda</span>
+            </a>
+
+            <a href="../modelos/modelos.html" class="nav-item">
+                <i class="bi bi-folder2-open"></i>
+                <span>Modelos</span>
+            </a>
+
+            <a href="../equipamentos/equipamentos.html" class="nav-item">
+                <i class="bi bi-gear-wide-connected"></i>
+                <span>Equipamentos</span>
+            </a>
+
+            <a href="../clients/clients.html" class="nav-item">
+                <i class="bi bi-buildings"></i>
+                <span>Clientes</span>
+            </a>
+
+            <a href="../locais/locais.html" class="nav-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Locais</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Não conformidades</span>
+                <span class="nav-badge danger">3</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-clock-history"></i>
+                <span>Histórico</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-people"></i>
+                <span>Usuários</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>v4.8.2-PROD</span>
+            </div>
+
+            <span class="security-status">
+                SEC-OK
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    
+
+    <!-- ================= MAIN ================= -->
+    <div class="main-wrapper">
+
+<header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu"
+                    id="openSidebar"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    Sincronização em tempo real
+                    <strong>Ativa</strong>
+                </div>
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar código, ativo, local..."
+                    >
+
+                    <kbd>CTRL K</kbd>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="unit-selector">
+                    <i class="bi bi-building"></i>
+
+                    <div>
+                        <small>Unidade</small>
+                        <strong>Complexo Industrial Sul</strong>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+
+                <button class="icon-button notification-button">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="profile-info">
+                        <strong>Eng. Marcos Silveira</strong>
+                        <small>Supervisor Técnico Sênior</small>
+                    </div>
+
+                    <div class="profile-avatar">
+                        MS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ================= CONTENT ================= -->
+        <main class="dashboard">
+
+            <!-- Page heading -->
+            <section class="page-header">
+
+                <div>
+
+                    <div class="breadcrumb-custom">
+                        Início
+                        <i class="bi bi-chevron-right"></i>
+                        Inspeções
+                        <i class="bi bi-chevron-right"></i>
+                        <strong>Revisão de Inspeção</strong>
+                    </div>
+
+                    <div class="page-title-row">
+
+                        <div>
+                            <h1>
+                                Revisão de Inspeção
+                            </h1>
+
+                            <p>
+                                Detalhamento e revisão da inspeção OSP-2026-0187
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="page-actions">
+
+                    <button class="btn btn-light-custom">
+                        <i class="bi bi-arrow-left"></i>
+                        Voltar
+                    </button>
+
+                    <button class="btn btn-light-custom">
+                        <i class="bi bi-printer"></i>
+                        Relatório
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ================= INFO GERAL ================= -->
+            <section class="row g-3 mb-4">
+
+                <div class="col-12 col-xl-4">
+                    <div class="dashboard-card h-100">
+                        <div class="card-header-custom">
+                            <div>
+                                <div class="section-icon">
+                                    <i class="bi bi-clipboard-data"></i>
+                                </div>
+                                <div>
+                                    <h6>Informações da inspeção</h6>
+                                    <small>Ordem de serviço OSP-2026-0187</small>
+                                </div>
+                            </div>
+                            <span class="status-badge pending"><span></span>AGUARDANDO REVISÃO</span>
+                        </div>
+
+                        <table class="table operational-table mb-0">
+                            <tbody>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <td>Metalúrgica Pilar Ltda.</td>
+                                </tr>
+                                <tr>
+                                    <th>Local</th>
+                                    <td>Planta II — Galpão de Usinagem</td>
+                                </tr>
+                                <tr>
+                                    <th>Equipamento</th>
+                                    <td>TB-GEN-02-B · Gerador Diesel 500 kVA</td>
+                                </tr>
+                                <tr>
+                                    <th>Modelo de checklist</th>
+                                    <td>Manutenção Preventiva — Geradores v2.3</td>
+                                </tr>
+                                <tr>
+                                    <th>Técnico responsável</th>
+                                    <td>Carlos Menezes</td>
+                                </tr>
+                                <tr>
+                                    <th>Data de execução</th>
+                                    <td>18/11/2026 · 08h42 às 10h17</td>
+                                </tr>
+                                <tr>
+                                    <th>Prioridade</th>
+                                    <td><span class="status-badge pending"><span></span>ALTA</span></td>
+                                </tr>
+                                <tr>
+                                    <th>Observações do técnico</th>
+                                    <td>Equipamento operando dentro dos parâmetros. Filtro de ar com desgaste acentuado, recomendada troca preventiva em até 30 dias.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-4">
+                    <div class="dashboard-card h-100">
+                        <div class="card-header-custom">
+                            <div>
+                                <div class="section-icon">
+                                    <i class="bi bi-list-check"></i>
+                                </div>
+                                <div>
+                                    <h6>Respostas do checklist</h6>
+                                    <small>18 de 20 itens conformes</small>
+                                </div>
+                            </div>
+                            <span class="header-counter">92%</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table operational-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Resultado</th>
+                                        <th>Obs.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1. Nível de óleo</td>
+                                        <td><span class="status-badge completed"><span></span>CONFORME</span></td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2. Tensão de saída (380V)</td>
+                                        <td><span class="status-badge completed"><span></span>CONFORME</span></td>
+                                        <td>381,2 V fase A</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3. Pressão do sistema</td>
+                                        <td><span class="status-badge completed"><span></span>CONFORME</span></td>
+                                        <td>4,2 bar</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4. Temperatura do alternador</td>
+                                        <td><span class="status-badge completed"><span></span>CONFORME</span></td>
+                                        <td>68 °C</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5. Filtro de ar</td>
+                                        <td><span class="status-badge pending"><span></span>ACEITÁVEL C/ RESSALVA</span></td>
+                                        <td>Desgaste acentuado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6. Fixação da base antivibratória</td>
+                                        <td><span class="status-badge stopped"><span></span>NÃO CONFORME</span></td>
+                                        <td>Parafuso M12 solto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7. Bateria / partida</td>
+                                        <td><span class="status-badge completed"><span></span>CONFORME</span></td>
+                                        <td>12,8 V</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8. Conexões elétricas</td>
+                                        <td><span class="status-badge completed"><span></span>CONFORME</span></td>
+                                        <td>—</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="text-center py-2 border-top">
+                            <small class="text-muted">Exibindo 8 de 20 itens · <a href="#">ver checklist completo</a></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-4">
+                    <div class="dashboard-card mb-3">
+                        <div class="card-header-custom">
+                            <div>
+                                <div class="section-icon">
+                                    <i class="bi bi-camera"></i>
+                                </div>
+                                <div>
+                                    <h6>Evidências fotográficas</h6>
+                                    <small>4 anexos</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="photo-placeholder">
+                                    <i class="bi bi-image"></i>
+                                    <span>IMG_0412.jpg</span>
+                                    <small>Painel elétrico</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="photo-placeholder">
+                                    <i class="bi bi-image"></i>
+                                    <span>IMG_0413.jpg</span>
+                                    <small>Filtro de ar</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="photo-placeholder">
+                                    <i class="bi bi-image"></i>
+                                    <span>IMG_0415.jpg</span>
+                                    <small>Base antivibratória</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="photo-placeholder">
+                                    <i class="bi bi-image"></i>
+                                    <span>IMG_0418.jpg</span>
+                                    <small>Quadro de medição</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header-custom">
+                            <div>
+                                <div class="section-icon danger-card">
+                                    <i class="bi bi-exclamation-triangle"></i>
+                                </div>
+                                <div>
+                                    <h6>Não conformidades identificadas</h6>
+                                    <small>1 aberta · 1 pendente</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert-item">
+                            <div class="alert-icon">
+                                <i class="bi bi-x-octagon"></i>
+                            </div>
+                            <div class="alert-content">
+                                <span class="alert-title">NC-0419 · Parafuso M12 base solto</span>
+                                <small class="warning-text">Severidade: média · Ação corretiva: reaperto e tração em próxima OS</small>
+                            </div>
+                            <span class="status-badge stopped"><span></span>ABERTA</span>
+                        </div>
+
+                        <div class="alert-item">
+                            <div class="alert-icon">
+                                <i class="bi bi-eye"></i>
+                            </div>
+                            <div class="alert-content">
+                                <span class="alert-title">Ressalva · Filtro de ar desgastado</span>
+                                <small class="warning-text">Recomendação: troca preventiva em até 30 dias</small>
+                            </div>
+                            <span class="status-badge pending"><span></span>MONITORAR</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= HISTÓRICO + DECISÃO ================= -->
+            <section class="row g-3">
+
+                <div class="col-12 col-xl-8">
+                    <div class="dashboard-card">
+                        <div class="card-header-custom">
+                            <div>
+                                <div class="section-icon">
+                                    <i class="bi bi-clock-history"></i>
+                                </div>
+                                <div>
+                                    <h6>Histórico de status</h6>
+                                    <small>Linha do tempo da OS OSP-2026-0187</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table operational-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Data / hora</th>
+                                    <th>Status</th>
+                                    <th>Responsável</th>
+                                    <th>Comentário</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>12/11/2026 · 14h05</td>
+                                    <td><span class="status-badge pending"><span></span>PLANEJADA</span></td>
+                                    <td>Eng. Marcos Silveira</td>
+                                    <td>OS criada a partir do plano preventivo nov/2026</td>
+                                </tr>
+                                <tr>
+                                    <td>18/11/2026 · 08h12</td>
+                                    <td><span class="status-badge running"><span></span>EM ANDAMENTO</span></td>
+                                    <td>Carlos Menezes</td>
+                                    <td>Check-in no local (geolocalização confirmada)</td>
+                                </tr>
+                                <tr>
+                                    <td>18/11/2026 · 10h20</td>
+                                    <td><span class="status-badge pending"><span></span>AGUARDANDO REVISÃO</span></td>
+                                    <td>Carlos Menezes</td>
+                                    <td>Checklist finalizado · 4 evidências anexadas · 1 NC aberta</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-4">
+                    <div class="dashboard-card">
+                        <div class="card-header-custom">
+                            <div>
+                                <div class="section-icon">
+                                    <i class="bi bi-clipboard-check"></i>
+                                </div>
+                                <div>
+                                    <h6>Decisão do supervisor</h6>
+                                    <small>Aprovar ou reprovar a inspeção</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label mb-1"><small>Parecer da revisão</small></label>
+                            <textarea class="form-control" rows="3" placeholder="Comentário opcional sobre a revisão..."></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary-custom" type="button">
+                                <i class="bi bi-check2-circle"></i>
+                                Aprovar inspeção
+                            </button>
+                            <button class="btn btn-light-custom" type="button">
+                                <i class="bi bi-x-circle"></i>
+                                Reprovar e devolver ao técnico
+                            </button>
+                        </div>
+
+                        <hr>
+
+                        <small class="text-muted">
+                            <i class="bi bi-info-circle"></i>
+                            Protótipo estático, os botões são só elementos visuais da interface.
+                        </small>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+
+<!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JS -->
+
+</body>
+</html>
+
