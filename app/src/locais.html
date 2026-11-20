@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FieldOps | Locais</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dashboard/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Overlay mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand-icon">
+                <i class="bi bi-boxes"></i>
+            </div>
+
+            <div>
+                <h5>FieldOps</h5>
+                <span>Enterprise System</span>
+            </div>
+
+            <button
+                class="btn-close-sidebar d-lg-none"
+                id="closeSidebar"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+        <div class="sidebar-section-title">
+            MÓDULOS PRINCIPAIS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Visão geral</span>
+            </a>
+
+            <a href="../acompanhamento/acompanhamento.html" class="nav-item">
+                <i class="bi bi-clipboard-check"></i>
+                <span>Inspeções</span>
+                <span class="nav-badge">14</span>
+            </a>
+
+            <a href="../planejamento/planejamento.html" class="nav-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Planejamento</span>
+            </a>
+
+            <a href="../modelos/modelos.html" class="nav-item">
+                <i class="bi bi-folder2-open"></i>
+                <span>Modelos</span>
+            </a>
+
+            <a href="../equipamentos/equipamentos.html" class="nav-item">
+                <i class="bi bi-gear-wide-connected"></i>
+                <span>Equipamentos</span>
+            </a>
+
+            <a href="../clients/clients.html" class="nav-item">
+                <i class="bi bi-buildings"></i>
+                <span>Clientes</span>
+            </a>
+
+            <a href="locais.html" class="nav-item active">
+                <i class="bi bi-geo-alt"></i>
+                <span>Locais</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Não conformidades</span>
+                <span class="nav-badge danger">3</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-clock-history"></i>
+                <span>Histórico</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-people"></i>
+                <span>Usuários</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>v4.8.2-PROD</span>
+            </div>
+
+            <span class="security-status">
+                SEC-OK
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <div class="main-wrapper">
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu"
+                    id="openSidebar"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    Sincronização em tempo real
+                    <strong>Ativa</strong>
+                </div>
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar código, ativo, local..."
+                    >
+
+                    <kbd>CTRL K</kbd>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="unit-selector">
+                    <i class="bi bi-building"></i>
+
+                    <div>
+                        <small>Unidade</small>
+                        <strong>Complexo Industrial Sul</strong>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+
+                <button class="icon-button notification-button">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="profile-info">
+                        <strong>Eng. Marcos Silveira</strong>
+                        <small>Supervisor Técnico Sênior</small>
+                    </div>
+
+                    <div class="profile-avatar">
+                        MS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+       
+<main class="dashboard fo-dashboard">
+
+    <!-- CABEÇALHO -->
+    <section class="fo-header">
+        <div>
+            <span class="fo-eyebrow">FIELDOPS / LOCAIS</span>
+            <h1>Locais</h1>
+            <p>Gerencie os locais cadastrados e acompanhe os ambientes disponíveis para inspeção.</p>
+        </div>
+
+        <button class="fo-primary-btn">
+            <i class="bi bi-plus-lg"></i>
+            Novo local
+        </button>
+    </section>
+
+    <!-- INDICADORES -->
+    <section class="fo-stats">
+
+        <div class="fo-stat">
+            <div class="fo-stat-heading">
+                <span>Total de locais</span>
+                <i class="bi bi-calendar-event"></i>
+            </div>
+
+            <h2>18</h2>
+            <span class="fo-stat-foot">Locais cadastrados</span>
+        </div>
+
+        <div class="fo-stat">
+            <div class="fo-stat-heading">
+                <span>Locais Ativos</span>
+                <i class="bi bi-arrow-repeat"></i>
+            </div>
+
+            <h2>15</h2>
+            <span class="fo-stat-foot">Disponíveis para inspeção</span>
+        </div>
+
+        <div class="fo-stat">
+            <div class="fo-stat-heading">
+                <span>Locais inativos</span>
+                <i class="bi bi-clipboard-check"></i>
+            </div>
+
+            <h2>03</h2>
+            <span class="fo-stat-foot">Indisponíveis para inspeção</span>
+        </div>
+
+        <div class="fo-stat">
+            <div class="fo-stat-heading">
+                <span>Locais em manutenção</span>
+                <i class="bi bi-check-circle"></i>
+            </div>
+
+            <h2>02</h2>
+            <span class="fo-stat-foot">Locais ativos com manutenção programada</span>
+        </div>
+
+    </section>
+
+    <!-- ÁREA PRINCIPAL -->
+    
+<!-- ================= LOCAIS CADASTRADOS ================= -->
+<section class="fo-main-grid" style="display: block;">
+
+    <div class="fo-panel w-100">
+        <div class="fo-panel-header">
+            <div>
+                <span class="fo-eyebrow">GESTÃO DE LOCAIS</span>
+                <h2>Locais cadastrados</h2>
+                <p>Consulte os ambientes disponíveis para inspeção.</p>
+            </div>
+            <span class="badge bg-primary">18 locais</span>
+        </div>
+
+        <div class="p-3">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Código</th>
+                            <th>Local</th>
+                            <th>Endereço</th>
+                            <th>Responsável</th>
+                            <th>Situação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LOC-001</td>
+                            <td>Unidade Campinas</td>
+                            <td>Campinas - SP</td>
+                            <td>Carlos Silva</td>
+                            <td><span class="badge bg-success">Ativo</span></td>
+                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
+                        </tr>
+                        <tr>
+                            <td>LOC-002</td>
+                            <td>Centro Operacional Itu</td>
+                            <td>Itu - SP</td>
+                            <td>Ana Oliveira</td>
+                            <td><span class="badge bg-success">Ativo</span></td>
+                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
+                        </tr>
+                        <tr>
+                            <td>LOC-003</td>
+                            <td>Unidade Sorocaba</td>
+                            <td>Sorocaba - SP</td>
+                            <td>Marcos Pereira</td>
+                            <td><span class="badge bg-secondary">Inativo</span></td>
+                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
+                        </tr>
+                        <tr>
+                            <td>LOC-004</td>
+                            <td>Unidade Jundiaí</td>
+                            <td>Jundiaí - SP</td>
+                            <td>Fernanda Costa</td>
+                            <td><span class="badge bg-warning text-dark">Manutenção</span></td>
+                            <td><button class="btn btn-sm btn-outline-primary" type="button">Visualizar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-muted small mt-3 mb-0">
+                Exibindo 4 registros de exemplo. Dados fictícios.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- SEGUNDA LINHA -->
+    <section class="fo-secondary-grid">
+
+        <!-- NÃO CONFORMIDADES -->
+        <div class="fo-panel fo-nc-panel">
+
+            <div class="fo-panel-header">
+                <div>
+                    <span class="fo-eyebrow">OCORRÊNCIAS</span>
+                    <h2>Não conformidades</h2>
+                    <p>Distribuição por criticidade</p>
+                </div>
+
+                <div class="fo-nc-total">
+                    <strong>12</strong>
+                    <span>abertas</span>
+                </div>
+            </div>
+
+            <div class="fo-criticality">
+
+                <div class="fo-criticality-item">
+                    <div class="fo-criticality-info">
+                        <span class="fo-criticality-label">
+                            <span class="fo-dot critical"></span>
+                            Crítica
+                        </span>
+                        <strong>02</strong>
+                    </div>
+
+                    <div class="fo-bar">
+                        <div class="fo-bar-fill critical-fill" style="width: 17%"></div>
+                    </div>
+                </div>
+
+                <div class="fo-criticality-item">
+                    <div class="fo-criticality-info">
+                        <span class="fo-criticality-label">
+                            <span class="fo-dot high"></span>
+                            Alta
+                        </span>
+                        <strong>04</strong>
+                    </div>
+
+                    <div class="fo-bar">
+                        <div class="fo-bar-fill high-fill" style="width: 33%"></div>
+                    </div>
+                </div>
+
+                <div class="fo-criticality-item">
+                    <div class="fo-criticality-info">
+                        <span class="fo-criticality-label">
+                            <span class="fo-dot medium"></span>
+                            Média
+                        </span>
+                        <strong>03</strong>
+                    </div>
+
+                    <div class="fo-bar">
+                        <div class="fo-bar-fill medium-fill" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <div class="fo-criticality-item">
+                    <div class="fo-criticality-info">
+                        <span class="fo-criticality-label">
+                            <span class="fo-dot low"></span>
+                            Baixa
+                        </span>
+                        <strong>03</strong>
+                    </div>
+
+                    <div class="fo-bar">
+                        <div class="fo-bar-fill low-fill" style="width: 25%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="#" class="fo-panel-link">
+                Ver não conformidades
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- ATALHOS -->
+        <div class="fo-panel fo-shortcuts-panel">
+
+            <div class="fo-panel-header">
+                <div>
+                    <span class="fo-eyebrow">ACESSO RÁPIDO</span>
+                    <h2>Atalhos</h2>
+                    <p>Principais ações do sistema.</p>
+                </div>
+            </div>
+
+            <div class="fo-shortcuts">
+
+                <a href="#" class="fo-shortcut">
+                    <div class="fo-shortcut-icon blue">
+                        <i class="bi bi-plus-square"></i>
+                    </div>
+
+                    <div>
+                        <strong>Nova inspeção</strong>
+                        <span>Agendar atividade</span>
+                    </div>
+
+                    <i class="bi bi-chevron-right fo-shortcut-arrow"></i>
+                </a>
+
+                <a href="#" class="fo-shortcut">
+                    <div class="fo-shortcut-icon amber">
+                        <i class="bi bi-clipboard2-check"></i>
+                    </div>
+
+                    <div>
+                        <strong>Revisar pendências</strong>
+                        <span>Ver inspeções recebidas</span>
+                    </div>
+
+                    <i class="bi bi-chevron-right fo-shortcut-arrow"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INSPEÇÕES RECENTES -->
+    <section class="fo-panel fo-recent-panel">
+
+        <div class="fo-panel-header fo-recent-header">
+            <div>
+                <span class="fo-eyebrow">ACOMPANHAMENTO</span>
+                <h2>Inspeções recentes</h2>
+                <p>Últimas atividades registradas no sistema.</p>
+            </div>
+
+            <a href="#" class="fo-panel-link">
+                Ver todas
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table fo-table">
+                <thead>
+                    <tr>
+                        <th>INSPEÇÃO</th>
+                        <th>EQUIPAMENTO</th>
+                        <th>RESPONSÁVEL</th>
+                        <th>DATA</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong class="fo-inspection-code">INS-0248</strong>
+                        </td>
+                        <td>
+                            <strong>Compressor COMP-003</strong>
+                            <small>Unidade de Campinas</small>
+                        </td>
+                        <td>Lucas Ferreira</td>
+                        <td>19 nov, 09:42</td>
+                        <td>
+                            <span class="fo-status approved">Aprovada</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong class="fo-inspection-code">INS-0247</strong>
+                        </td>
+                        <td>
+                            <strong>Gerador GEN-012</strong>
+                            <small>Unidade de Sorocaba</small>
+                        </td>
+                        <td>João Mendes</td>
+                        <td>19 nov, 09:18</td>
+                        <td>
+                            <span class="fo-status reviewing">Em revisão</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong class="fo-inspection-code">INS-0246</strong>
+                        </td>
+                        <td>
+                            <strong>Bomba BMB-021</strong>
+                            <small>Unidade de Itu</small>
+                        </td>
+                        <td>Pedro Costa</td>
+                        <td>19 nov, 08:56</td>
+                        <td>
+                            <span class="fo-status correction">Correção</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong class="fo-inspection-code">INS-0245</strong>
+                        </td>
+                        <td>
+                            <strong>Painel PNL-008</strong>
+                            <small>Unidade de Campinas</small>
+                        </td>
+                        <td>Lucas Ferreira</td>
+                        <td>19 nov, 08:31</td>
+                        <td>
+                            <span class="fo-status running">Em andamento</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+</main>
+
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
+
