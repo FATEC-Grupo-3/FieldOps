@@ -1,0 +1,229 @@
+/* =========================================================
+   FIELDOPS | MODELOS DE CHECKLIST
+   Estilos específicos usando os componentes de dashboard.css.
+   ========================================================= */
+
+.models-page .page-header {
+    align-items: flex-end;
+}
+
+.models-page .kpi-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 132px;
+}
+
+.models-page .kpi-description {
+    gap: 10px;
+}
+
+.models-page .kpi-description > :last-child {
+    text-align: right;
+}
+
+.models-page .dashboard-card {
+    min-width: 0;
+}
+
+.models-page .card-header-custom {
+    gap: 14px;
+}
+
+.models-page .header-counter {
+    padding: 5px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface-light);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.models-page .models-search {
+    height: 38px;
+    background: var(--surface-light);
+}
+
+.models-page .models-search input {
+    font-size: 11px;
+}
+
+.models-page .models-filter {
+    height: 38px;
+    border-color: var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 11px;
+    box-shadow: none;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.models-page .models-filter:hover {
+    border-color: var(--border-dark);
+}
+
+.models-page .models-filter:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(23, 71, 212, .12);
+}
+
+.models-page .operational-table {
+    min-width: 760px;
+}
+
+.models-page .operational-table thead th {
+    letter-spacing: .45px;
+}
+
+.models-page .operational-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.models-page .operational-table tbody tr {
+    transition: background-color .16s ease;
+}
+
+.models-page .operational-table td:nth-child(3),
+.models-page .operational-table td:nth-child(4) {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+.models-page .operational-table td:nth-child(2) {
+    min-width: 220px;
+    line-height: 1.5;
+}
+
+.models-page .os-code {
+    margin-top: 4px;
+    font-size: 9px !important;
+    letter-spacing: .2px;
+}
+
+.models-page .model-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.models-page .model-status::before {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    content: "";
+}
+
+.models-page .model-status.published {
+    border-color: #c8f1da;
+    background: var(--success-light);
+    color: #087443;
+}
+
+.models-page .model-status.draft {
+    border-color: #f8dfad;
+    background: var(--warning-light);
+    color: #9a6700;
+}
+
+.models-page .table-actions {
+    gap: 5px;
+}
+
+.models-page .table-actions .icon-button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid transparent;
+    background: var(--surface-light);
+    transition: color .18s ease, background-color .18s ease, border-color .18s ease;
+}
+
+.models-page .table-actions .icon-button:hover:not(:disabled) {
+    border-color: var(--border);
+    background: white;
+    color: var(--primary);
+}
+
+.models-page .table-actions .icon-button:disabled {
+    background: #f8f9fb;
+    color: #c2c8d2;
+    cursor: not-allowed;
+}
+
+.models-page .models-table-footer {
+    gap: 12px;
+    flex-wrap: wrap;
+    color: var(--text-light) !important;
+    font-size: 10px;
+}
+
+.models-page :is(button, a, input, select):focus-visible {
+    outline: 3px solid rgba(23, 71, 212, .28);
+    outline-offset: 2px;
+}
+
+@media (max-width: 991px) {
+    .models-page .page-header {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .models-page .dashboard {
+        padding: 22px 16px 30px;
+    }
+
+    .models-page .page-header {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .models-page .page-actions,
+    .models-page .page-actions > .btn {
+        width: 100%;
+    }
+
+    .models-page .dashboard-card {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .models-page .dashboard {
+        padding: 18px 12px 25px;
+    }
+
+    .models-page .page-title-row h1 {
+        font-size: 21px;
+    }
+
+    .models-page .card-header-custom {
+        align-items: flex-start;
+    }
+
+    .models-page .header-counter {
+        margin-top: 3px;
+    }
+
+    .models-page .models-table-footer {
+        align-items: flex-start !important;
+        flex-direction: column;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .models-page *,
+    .models-page *::before,
+    .models-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
