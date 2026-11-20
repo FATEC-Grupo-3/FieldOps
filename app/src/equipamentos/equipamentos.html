@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FieldOps | equipamentos</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./equipamentos.css">
+</head>
+
+<body>
+
+    <!-- Overlay mobile -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-header">
+
+            <div class="brand-icon">
+                <i class="bi bi-boxes"></i>
+            </div>
+
+            <div>
+                <h5>FieldOps</h5>
+                <span>Enterprise System</span>
+            </div>
+
+            <button
+                class="btn-close-sidebar d-lg-none"
+                id="closeSidebar"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+        <div class="sidebar-section-title">
+            MÓDULOS PRINCIPAIS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="bi bi-grid-1x2-fill"></i>
+                <span>Visão geral</span>
+            </a>
+
+            <a href="../acompanhamento/acompanhamento.html" class="nav-item">
+                <i class="bi bi-clipboard-check"></i>
+                <span>Inspeções</span>
+                <span class="nav-badge">14</span>
+            </a>
+
+            <a href="../planejamento/planejamento.html" class="nav-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Planejamento</span>
+            </a>
+
+            <a href="../modelos/modelos.html" class="nav-item">
+                <i class="bi bi-folder2-open"></i>
+                <span>Modelos</span>
+            </a>
+
+            <a href="../equipamentos/equipamentos.html" class="nav-item active">
+                <i class="bi bi-gear-wide-connected"></i>
+                <span>Equipamentos</span>
+            </a>
+
+            <a href="../clients/clients.html" class="nav-item">
+                <i class="bi bi-buildings"></i>
+                <span>Clientes</span>
+            </a>
+
+            
+            
+            <a href="../locais/locais.html" class="nav-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Locais</span>
+            </a>
+
+
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Não conformidades</span>
+                <span class="nav-badge danger">3</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-clock-history"></i>
+                <span>Histórico</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="bi bi-people"></i>
+                <span>Usuários</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>v4.8.2-PROD</span>
+            </div>
+
+            <span class="security-status">
+                SEC-OK
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <div class="main-wrapper">
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="mobile-menu"
+                    id="openSidebar"
+                >
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    Sincronização em tempo real
+                    <strong>Ativa</strong>
+                </div>
+
+                <div class="search-box">
+
+                    <i class="bi bi-search"></i>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Buscar código, ativo, local..."
+                    >
+
+                    <kbd>CTRL K</kbd>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="unit-selector">
+                    <i class="bi bi-building"></i>
+
+                    <div>
+                        <small>Unidade</small>
+                        <strong>Complexo Industrial Sul</strong>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+
+                <button class="icon-button notification-button">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="profile-info">
+                        <strong>Eng. Marcos Silveira</strong>
+                        <small>Supervisor Técnico Sênior</small>
+                    </div>
+
+                    <div class="profile-avatar">
+                        MS
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+       
+<main class="dashboard fo-dashboard">
+
+    <!-- CABEÇALHO -->
+    <section class="fo-header">
+        <div>
+            <span class="fo-eyebrow">FIELDOPS / EQUIPAMENTOS</span>
+            <h1>Equipamentos</h1>
+            <p>Gerencie os equipamentos cadastrados e acompanhe suas condições de operação e manutenção.</p>
+        </div>
+
+        <button class="fo-primary-btn">
+            <i class="bi bi-plus-lg"></i>
+            Novo equipamento
+        </button>
+    </section>
+
+    <!-- INDICADORES -->
+    
+<section class="fo-stats">
+
+    <div class="fo-stat">
+        <div class="fo-stat-heading">
+            <span>Total de equipamentos</span>
+            <i class="bi bi-pc-display"></i>
+        </div>
+        <h2>32</h2>
+        <span class="fo-stat-foot">Equipamentos cadastrados</span>
+    </div>
+
+    <div class="fo-stat">
+        <div class="fo-stat-heading">
+            <span>Equipamentos ativos</span>
+            <i class="bi bi-check-circle"></i>
+        </div>
+        <h2>25</h2>
+        <span class="fo-stat-foot">Disponíveis para utilização</span>
+    </div>
+
+    <div class="fo-stat">
+        <div class="fo-stat-heading">
+            <span>Equipamentos inativos</span>
+            <i class="bi bi-x-circle"></i>
+        </div>
+        <h2>4</h2>
+        <span class="fo-stat-foot">Fora de operação</span>
+    </div>
+
+    <div class="fo-stat">
+        <div class="fo-stat-heading">
+            <span>Em manutenção</span>
+            <i class="bi bi-tools"></i>
+        </div>
+        <h2>3</h2>
+        <span class="fo-stat-foot">Aguardando liberação</span>
+    </div>
+
+</section>
+
+
+    <!-- ÁREA PRINCIPAL -->
+    
+<!-- ================= LOCAIS CADASTRADOS ================= -->
+<section class="fo-main-grid" style="display: block;">
+
+    <div class="fo-panel w-100">
+        <div class="fo-panel-header">
+            <div>
+                <span class="fo-eyebrow">GESTÃO DE EQUIPAMENTOS</span>
+                <h2>Equipamentos cadastrados</h2>
+                <p>Consulte os equipamentos cadastrados e acompanhe suas condições de operação.</p>
+            </div>
+            <span class="badge bg-primary">18 locais</span>
+        </div>
+
+        <div class="p-3">
+            <div class="table-responsive">
+                
+<div class="row g-3 mb-4">
+    <div class="col-md-6">
+        <input
+            type="search"
+            class="form-control"
+            placeholder="Buscar equipamento..."
+            aria-label="Buscar equipamento"
+        >
+    </div>
+
+    <div class="col-md-3">
+        <select class="form-select" aria-label="Filtrar por status">
+            <option selected>Todos os status</option>
+            <option>Ativo</option>
+            <option>Inativo</option>
+            <option>Em manutenção</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <select class="form-select" aria-label="Filtrar por local">
+           <option selected>Todos os locais</option>
+<option>Unidade Campinas</option>
+<option>Centro Operacional Itu</option>
+<option>Unidade Sorocaba</option>
+<option>Unidade Jundiaí</option>
+<option>Unidade Triunfo</option>
+<option>Unidade Guaíba</option>
+<option>Polo Sul</option>
+<option>Unidade Canoas</option>
+<option>Unidade Osório</option>
+<option>Unidade São Paulo</option>
+        </select>
+    </div>
+</div>
+
+<table class="table table-hover align-middle mb-0">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Equipamento</th>
+            <th>Local</th>
+            <th>Responsável</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>EQP-001</td>
+            <td>Ar-condicionado Split</td>
+            <td>Unidade Campinas</td>
+            <td>Carlos Silva</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+            <td>EQP-002</td>
+            <td>Gerador de energia</td>
+            <td>Centro Operacional Itu</td>
+            <td>Mariana Costa</td>
+            <td><span class="badge bg-warning text-dark">Em manutenção</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+            <td>EQP-003</td>
+            <td>Bomba hidráulica</td>
+            <td>Unidade Sorocaba</td>
+            <td>Pedro Almeida</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+            <td>EQP-004</td>
+            <td>Quadro elétrico</td>
+            <td>Unidade Jundiaí</td>
+            <td>Ana Oliveira</td>
+            <td><span class="badge bg-danger">Inativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+
+        <tr>
+            <td>EQP-005</td>
+            <td>Compressor de ar industrial</td>
+            <td>Unidade Campinas</td>
+            <td>Roberto Mendes</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+            <td>EQP-006</td>
+            <td>Transformador elétrico</td>
+            <td>Centro Operacional Itu</td>
+            <td>Fernanda Lima</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+         <td>EQP-007</td>
+            <td>Esteira transportadora</td>
+            <td>Unidade Sorocaba</td>
+            <td>André Martins</td>
+            <td><span class="badge bg-danger">Inativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+            <td>EQP-008</td>
+            <td>Painel de comando elétrico</td>
+            <td>Unidade Jundiaí</td>
+            <td>Juliana Ferreira</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+            <td>EQP-009</td>
+            <td>Caldeira industrial</td>
+            <td>Unidade Campinas</td>
+            <td>Ricardo Oliveira</td>
+            <td><span class="badge bg-warning text-dark">Em manutenção</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+        <tr>
+            <td>EQP-010</td>
+            <td>Ventilador de exaustão</td>
+            <td>Centro Operacional Itu</td>
+            <td>Patrícia Souza</td>
+            <td><span class="badge bg-success">Ativo</span></td>
+            <td><button class="btn btn-sm btn-outline-primary">Visualizar</button></td>
+        </tr>
+
+    </tbody>
+</table>
+
+            
+<div class="d-flex justify-content-between align-items-center mt-3">
+    <small class="text-muted">Exibindo 10 de 32 equipamentos</small>
+    <small class="text-muted">Dados demonstrativos</small>
+</div>
+
+    </div>
+</section>
+
+</main>
+
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JS -->
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
+
