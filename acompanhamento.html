@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acompanhamento de Inspeções | FieldOps</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid p-4">
+
+        <!-- CABEÇALHO -->
+        <div class="mb-4">
+
+            <small class="text-secondary">FieldOps / Inspeções</small>
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-2">
+
+                <div>
+                    <h2 class="fw-bold mb-1">Acompanhamento de Inspeções</h2>
+                    <p class="text-secondary mb-0">
+                        Consulte e acompanhe o andamento das inspeções.
+                    </p>
+                </div>
+
+                <span class="badge text-bg-primary p-2">
+                    <i class="bi bi-clipboard-check"></i>
+                    Acompanhamento
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <div class="row g-3 mb-4">
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Total de inspeções</p>
+                        <h3 class="fw-bold mb-0">6</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Planejadas</p>
+                        <h3 class="fw-bold text-secondary mb-0">1</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Em andamento</p>
+                        <h3 class="fw-bold text-primary mb-0">1</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Aguardando revisão</p>
+                        <h3 class="fw-bold text-warning mb-0">1</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LISTA DE INSPEÇÕES -->
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-1">
+                        <i class="bi bi-list-check me-2"></i>
+                        Lista de Inspeções
+                    </h5>
+
+                    <small class="text-secondary">
+                        Consulte e filtre as inspeções cadastradas.
+                    </small>
+                </div>
+
+                <!-- FILTROS -->
+                <div class="row g-3 mb-4">
+
+                    <!-- PESQUISA -->
+                    <div class="col-md-4">
+
+                        <label for="pesquisa" class="form-label">
+                            Pesquisar inspeção
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-search"></i>
+                            </span>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="pesquisa"
+                                placeholder="Código, inspeção ou responsável..."
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <!-- FILTRO STATUS -->
+                    <div class="col-md-3">
+
+                        <label for="filtroStatus" class="form-label">
+                            Filtrar por status
+                        </label>
+
+                        <select class="form-select" id="filtroStatus">
+
+                            <option value="">Todos os status</option>
+                            <option>Planejada</option>
+                            <option>Em andamento</option>
+                            <option>Aguardando revisão</option>
+                            <option>Aprovada</option>
+                            <option>Reprovada</option>
+                            <option>Cancelada</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- FILTRO UNIDADE -->
+                    <div class="col-md-3">
+
+                        <label for="filtroUnidade" class="form-label">
+                            Filtrar por unidade
+                        </label>
+
+                        <select class="form-select" id="filtroUnidade">
+
+                            <option value="">Todas as unidades</option>
+                            <option>Sorocaba</option>
+                            <option>Itu</option>
+                            <option>Campinas</option>
+                            <option>São Paulo</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- LIMPAR FILTROS -->
+                    <div class="col-md-2 d-flex align-items-end">
+
+                        <button
+                            type="button"
+                            class="btn btn-outline-secondary w-100">
+
+                            <i class="bi bi-arrow-counterclockwise me-1"></i>
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- TABELA -->
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead class="table-light">
+
+                            <tr>
+                                <th>Código</th>
+                                <th>Inspeção</th>
+                                <th>Unidade</th>
+                                <th>Responsável</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>#001</td>
+                                <td>Inspeção de equipamentos</td>
+                                <td>Sorocaba</td>
+                                <td>João Silva</td>
+                                <td>20/11/2026</td>
+                                <td><span class="badge text-bg-secondary">Planejada</span></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#002</td>
+                                <td>Inspeção de segurança</td>
+                                <td>Itu</td>
+                                <td>Maria Oliveira</td>
+                                <td>19/11/2026</td>
+                                <td><span class="badge text-bg-primary">Em andamento</span></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#003</td>
+                                <td>Inspeção elétrica</td>
+                                <td>Campinas</td>
+                                <td>Pedro Santos</td>
+                                <td>18/11/2026</td>
+                                <td><span class="badge text-bg-warning">Aguardando revisão</span></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#004</td>
+                                <td>Inspeção de manutenção</td>
+                                <td>São Paulo</td>
+                                <td>Ana Costa</td>
+                                <td>17/11/2026</td>
+                                <td><span class="badge text-bg-success">Aprovada</span></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#005</td>
+                                <td>Inspeção estrutural</td>
+                                <td>Sorocaba</td>
+                                <td>Carlos Souza</td>
+                                <td>16/11/2026</td>
+                                <td><span class="badge text-bg-danger">Reprovada</span></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#006</td>
+                                <td>Inspeção de máquinas</td>
+                                <td>Itu</td>
+                                <td>Lucas Almeida</td>
+                                <td>15/11/2026</td>
+                                <td><span class="badge text-bg-dark">Cancelada</span></td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <!-- PAGINAÇÃO -->
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3">
+
+                    <small class="text-secondary">
+                        6 registros encontrados
+                    </small>
+
+                    <nav aria-label="Paginação">
+
+                        <ul class="pagination pagination-sm mb-0">
+
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">Anterior</a>
+                            </li>
+
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+
+                            <li class="page-item">
+                                <a class="page-link" href="#">Próximo</a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
