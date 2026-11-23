@@ -1,0 +1,295 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acompanhamento de Inspeções | FieldOps</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid p-4">
+
+        <!-- CABEÇALHO -->
+        <div class="mb-4">
+
+            <small class="text-secondary">FieldOps / Inspeções</small>
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-2">
+
+                <div>
+                    <h2 class="fw-bold mb-1">Acompanhamento de Inspeções</h2>
+                    <p class="text-secondary mb-0">
+                        Consulte e acompanhe o andamento das inspeções.
+                    </p>
+                </div>
+
+                <span class="badge text-bg-primary p-2">
+                    <i class="bi bi-clipboard-check"></i>
+                    Acompanhamento
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- INDICADORES -->
+        <div class="row g-3 mb-4">
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Total de inspeções</p>
+                        <h3 class="fw-bold mb-0" id="totalInspecoes">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Planejadas</p>
+                        <h3 class="fw-bold text-secondary mb-0" id="totalPlanejadas">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Em andamento</p>
+                        <h3 class="fw-bold text-primary mb-0" id="totalAndamento">0</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <p class="text-secondary mb-1">Aguardando revisão</p>
+                        <h3 class="fw-bold text-warning mb-0" id="totalRevisao">0</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- LISTA DE INSPEÇÕES -->
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <div class="mb-4">
+                    <h5 class="fw-bold mb-1">
+                        <i class="bi bi-list-check me-2"></i>
+                        Lista de Inspeções
+                    </h5>
+
+                    <small class="text-secondary">
+                        Consulte, pesquise e filtre as inspeções cadastradas.
+                    </small>
+                </div>
+
+
+                <!-- FILTROS -->
+                <div class="row g-3 mb-4">
+
+                    <!-- PESQUISA -->
+                    <div class="col-md-4">
+
+                        <label for="pesquisa" class="form-label">
+                            Pesquisar inspeção
+                        </label>
+
+                        <div class="input-group">
+
+                            <span class="input-group-text">
+                                <i class="bi bi-search"></i>
+                            </span>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="pesquisa"
+                                placeholder="Código, inspeção ou responsável..."
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- FILTRO STATUS -->
+                    <div class="col-md-3">
+
+                        <label for="filtroStatus" class="form-label">
+                            Filtrar por status
+                        </label>
+
+                        <select class="form-select" id="filtroStatus">
+
+                            <option value="">Todos os status</option>
+                            <option value="Planejada">Planejada</option>
+                            <option value="Em andamento">Em andamento</option>
+                            <option value="Aguardando revisão">Aguardando revisão</option>
+                            <option value="Aprovada">Aprovada</option>
+                            <option value="Reprovada">Reprovada</option>
+                            <option value="Cancelada">Cancelada</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FILTRO UNIDADE -->
+                    <div class="col-md-3">
+
+                        <label for="filtroUnidade" class="form-label">
+                            Filtrar por unidade
+                        </label>
+
+                        <select class="form-select" id="filtroUnidade">
+
+                            <option value="">Todas as unidades</option>
+                            <option value="Sorocaba">Sorocaba</option>
+                            <option value="Itu">Itu</option>
+                            <option value="Campinas">Campinas</option>
+                            <option value="São Paulo">São Paulo</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- LIMPAR FILTROS -->
+                    <div class="col-md-2 d-flex align-items-end">
+
+                        <button
+                            type="button"
+                            class="btn btn-outline-secondary w-100"
+                            id="limparFiltros">
+
+                            <i class="bi bi-arrow-counterclockwise me-1"></i>
+                            Limpar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABELA -->
+                <div class="table-responsive">
+
+                    <table class="table table-hover align-middle">
+
+                        <thead class="table-light">
+
+                            <tr>
+                                <th>Código</th>
+                                <th>Inspeção</th>
+                                <th>Unidade</th>
+                                <th>Responsável</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+
+                        </thead>
+
+                        <!-- INSPEÇÕES PREENCHIDAS PELO JAVASCRIPT -->
+                        <tbody id="tabelaInspecoes">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINAÇÃO -->
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3">
+
+                    <small class="text-secondary" id="contadorRegistros">
+                        0 registros encontrados
+                    </small>
+
+                    <nav aria-label="Paginação">
+
+                        <ul class="pagination pagination-sm mb-0" id="paginacao">
+                        </ul>
+
+                    </nav>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MODAL DE DETALHES -->
+    <div class="modal fade" id="modalDetalhes" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title fw-bold">
+                        <i class="bi bi-clipboard-check me-2"></i>
+                        Detalhes da Inspeção
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+
+                </div>
+
+                <div class="modal-body" id="conteudoDetalhes">
+                </div>
+
+                <div class="modal-footer">
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                        Fechar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOOTSTRAP JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ARQUIVO JAVASCRIPT -->
+    <script src="acompanhamento-inspecao.js"></script>
+
+</body>
+</html>
