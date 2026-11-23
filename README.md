@@ -58,5 +58,6 @@ Tornar as inspeções de campo mais **rápidas, organizadas e confiáveis**, red
 
 * **Repositorio:** https://github.com/FATEC-Grupo-3/FieldOps
 * **GitHub Pages (prototipo):** https://fatec-grupo-3.github.io/FieldOps/
+* **GitHub Project:** https://github.com/orgs/FATEC-Grupo-3/projects/1
 * **Pull Requests:** https://github.com/FATEC-Grupo-3/FieldOps/pulls?q=is%3Apr
 * **Tecnologias:** HTML5, CSS3, Bootstrap 5 (prototipo) - Angular 17 (versao aplicacao)
