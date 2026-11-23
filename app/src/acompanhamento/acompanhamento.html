@@ -9,97 +9,146 @@
     <title>Acompanhamento de Inspeções | FieldOps</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link href="../dashboard/dashboard.css"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../dashboard/dashboard.css">
+
+    <link rel="stylesheet" href="../dashboard/navigation.css">
 </head>
 
-<body class="bg-light">
-        <nav class="sidebar-nav">
+<body>
 
+    <input type="checkbox" id="sidebarToggle" class="sidebar-toggle">
+    <label for="sidebarToggle" class="sidebar-overlay"></label>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="brand-icon">
+                <i class="bi bi-boxes"></i>
+            </div>
+            <div class="brand-text">
+                <h5>FieldOps</h5>
+                <span>Enterprise System</span>
+            </div>
+            <label for="sidebarToggle" class="btn-close-sidebar">
+                <i class="bi bi-x-lg"></i>
+            </label>
+        </div>
+
+        <div class="sidebar-section-title">MÓDULOS PRINCIPAIS</div>
+
+        <nav class="sidebar-nav">
             <a href="../dashboard/dashboard.html" class="nav-item">
                 <i class="bi bi-grid-1x2-fill"></i>
                 <span>Visão geral</span>
             </a>
-
             <a href="../acompanhamento/acompanhamento.html" class="nav-item active">
                 <i class="bi bi-clipboard-check"></i>
                 <span>Inspeções</span>
                 <span class="nav-badge">14</span>
             </a>
-
             <a href="../planejamento/planejamento.html" class="nav-item">
                 <i class="bi bi-calendar3"></i>
                 <span>Planejamento</span>
             </a>
-
             <a href="../modelos/modelos.html" class="nav-item">
                 <i class="bi bi-folder2-open"></i>
                 <span>Modelos</span>
             </a>
-
             <a href="../equipamentos/equipamentos.html" class="nav-item">
                 <i class="bi bi-gear-wide-connected"></i>
                 <span>Equipamentos</span>
             </a>
-
             <a href="../clients/clients.html" class="nav-item">
                 <i class="bi bi-buildings"></i>
                 <span>Clientes</span>
             </a>
-
             <a href="../locais/locais.html" class="nav-item">
                 <i class="bi bi-geo-alt"></i>
                 <span>Locais</span>
             </a>
-
-            <a href="#" class="nav-item">
+            <a href="../conformidades/conformidades.html" class="nav-item">
                 <i class="bi bi-exclamation-triangle"></i>
                 <span>Não conformidades</span>
                 <span class="nav-badge danger">3</span>
             </a>
-
-            <a href="#" class="nav-item">
+            <a href="../historico/historico.html" class="nav-item">
                 <i class="bi bi-clock-history"></i>
                 <span>Histórico</span>
             </a>
-
-            <a href="#" class="nav-item">
-                <i class="bi bi-people"></i>
-                <span>Usuários</span>
-            </a>
-
         </nav>
 
-
-
-    <div class="container-fluid p-4">
-
-        <!-- CABEÇALHO -->
-        <div class="mb-4">
-
-            <small class="text-secondary">FieldOps / Inspeções</small>
-
-            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-2">
-
-                <div>
-                    <h2 class="fw-bold mb-1">Acompanhamento de Inspeções</h2>
-                    <p class="text-secondary mb-0">
-                        Consulte e acompanhe o andamento das inspeções.
-                    </p>
-                </div>
-
-                <span class="badge text-bg-primary p-2">
-                    <i class="bi bi-clipboard-check"></i>
-                    Acompanhamento
-                </span>
-
+        <div class="sidebar-footer">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>v4.8.2-PROD</span>
             </div>
-
+            <span class="security-status">SEC-OK</span>
         </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="topbar">
+            <div class="topbar-left">
+                <label for="sidebarToggle" class="mobile-menu">
+                    <i class="bi bi-list"></i>
+                </label>
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    Sincronização
+                    <strong>Ativa</strong>
+                </div>
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Buscar código, ativo, local...">
+                    <kbd>CTRL K</kbd>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="unit-selector">
+                    <i class="bi bi-building"></i>
+                    <div>
+                        <small>Unidade</small>
+                        <strong>Complexo Industrial Sul</strong>
+                    </div>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+                <div class="notification-button icon-button">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </div>
+                <div class="profile">
+                    <div class="profile-info">
+                        <strong>Eng. Marcos Silveira</strong>
+                        <small>Supervisor Técnico Sênior</small>
+                    </div>
+                    <div class="profile-avatar">MS</div>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <div class="container-fluid p-4">
+                <div class="mb-4">
+                    <small class="text-secondary">FieldOps / Inspeções</small>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mt-2">
+                        <div>
+                            <h2 class="fw-bold mb-1">Acompanhamento de Inspeções</h2>
+                            <p class="text-secondary mb-0">Consulte e acompanhe o andamento das inspeções.</p>
+                        </div>
+                        <span class="badge text-bg-primary p-2">
+                            <i class="bi bi-clipboard-check"></i>
+                            Acompanhamento
+                        </span>
+                    </div>
+                </div>
 
         <!-- INDICADORES -->
         <div class="row g-3 mb-4">
@@ -302,9 +351,17 @@
                                 <td>20/11/2026</td>
                                 <td><span class="badge text-bg-secondary">Planejada</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                                    <div class="d-inline-flex gap-1">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Observar inspeção #001" aria-label="Observar inspeção #001">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" title="Editar inspeção #001" aria-label="Editar inspeção #001">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Excluir inspeção #001" aria-label="Excluir inspeção #001">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -316,9 +373,17 @@
                                 <td>19/11/2026</td>
                                 <td><span class="badge text-bg-primary">Em andamento</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                                    <div class="d-inline-flex gap-1">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Observar inspeção #002" aria-label="Observar inspeção #002">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" title="Editar inspeção #002" aria-label="Editar inspeção #002">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Excluir inspeção #002" aria-label="Excluir inspeção #002">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -330,9 +395,17 @@
                                 <td>18/11/2026</td>
                                 <td><span class="badge text-bg-warning">Aguardando revisão</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                                    <div class="d-inline-flex gap-1">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Observar inspeção #003" aria-label="Observar inspeção #003">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" title="Editar inspeção #003" aria-label="Editar inspeção #003">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Excluir inspeção #003" aria-label="Excluir inspeção #003">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -344,9 +417,17 @@
                                 <td>17/11/2026</td>
                                 <td><span class="badge text-bg-success">Aprovada</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                                    <div class="d-inline-flex gap-1">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Observar inspeção #004" aria-label="Observar inspeção #004">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" title="Editar inspeção #004" aria-label="Editar inspeção #004">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Excluir inspeção #004" aria-label="Excluir inspeção #004">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -358,9 +439,17 @@
                                 <td>16/11/2026</td>
                                 <td><span class="badge text-bg-danger">Reprovada</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                                    <div class="d-inline-flex gap-1">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Observar inspeção #005" aria-label="Observar inspeção #005">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" title="Editar inspeção #005" aria-label="Editar inspeção #005">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Excluir inspeção #005" aria-label="Excluir inspeção #005">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -372,9 +461,17 @@
                                 <td>15/11/2026</td>
                                 <td><span class="badge text-bg-dark">Cancelada</span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-primary">
-                                        <i class="bi bi-eye"></i>
-                                    </button>
+                                    <div class="d-inline-flex gap-1">
+                                        <button type="button" class="btn btn-sm btn-outline-primary" title="Observar inspeção #006" aria-label="Observar inspeção #006">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary" title="Editar inspeção #006" aria-label="Editar inspeção #006">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Excluir inspeção #006" aria-label="Excluir inspeção #006">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
 
@@ -423,6 +520,8 @@
 
     </div>
 
+        </main>
+    </div>
 
     <!-- Bootstrap JS -->
     <script

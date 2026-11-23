@@ -1,42 +1,37 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>FieldOps | Planejamento de Inspeção</title>
+    <title>FieldOps | Planejamento</title>
 
     <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet"
-    >
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../dashboard/dashboard.css">
-    <link rel="stylesheet" href="./planejamento.css">
+    <link rel="stylesheet" href="planejamento.css">
+    <link rel="stylesheet" href="../dashboard/navigation.css">
 </head>
 
 <body>
 
-    <!-- Overlay mobile -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <!-- CONTROLE SIDEBAR MOBILE -->
+    <input type="checkbox" id="sidebarToggle">
 
-    <!-- ================= SIDEBAR ================= -->
-    <aside class="sidebar" id="sidebar">
+    <label for="sidebarToggle" class="sidebar-overlay"></label>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
 
         <div class="sidebar-header">
 
@@ -44,17 +39,14 @@
                 <i class="bi bi-boxes"></i>
             </div>
 
-            <div>
+            <div class="brand-text">
                 <h5>FieldOps</h5>
                 <span>Enterprise System</span>
             </div>
 
-            <button
-                class="btn-close-sidebar d-lg-none"
-                id="closeSidebar"
-            >
+            <label for="sidebarToggle" class="btn-close-sidebar">
                 <i class="bi bi-x-lg"></i>
-            </button>
+            </label>
 
         </div>
 
@@ -100,18 +92,18 @@
                 <span>Locais</span>
             </a>
 
-            <a href="#" class="nav-item">
+            <a href="../conformidades/conformidades.html" class="nav-item">
                 <i class="bi bi-exclamation-triangle"></i>
                 <span>Não conformidades</span>
                 <span class="nav-badge danger">3</span>
             </a>
 
-            <a href="#" class="nav-item">
+            <a href="../historico/historico.html" class="nav-item">
                 <i class="bi bi-clock-history"></i>
                 <span>Histórico</span>
             </a>
 
-            <a href="#" class="nav-item">
+            <a href="../usuarios/usuarios.html" class="nav-item">
                 <i class="bi bi-people"></i>
                 <span>Usuários</span>
             </a>
@@ -125,47 +117,34 @@
                 <span>v4.8.2-PROD</span>
             </div>
 
-            <span class="security-status">
-                SEC-OK
-            </span>
+            <span class="security-status">SEC-OK</span>
 
         </div>
 
     </aside>
 
-    <!-- ================= MAIN ================= -->
+    <!-- MAIN -->
     <div class="main-wrapper">
 
-        <!-- ================= TOPBAR ================= -->
+        <!-- TOPBAR -->
         <header class="topbar">
 
             <div class="topbar-left">
 
-                <button
-                    class="mobile-menu"
-                    id="openSidebar"
-                >
+                <label for="sidebarToggle" class="mobile-menu">
                     <i class="bi bi-list"></i>
-                </button>
+                </label>
 
                 <div class="sync-status">
                     <span class="status-dot"></span>
-                    Sincronização em tempo real
+                    Sincronização
                     <strong>Ativa</strong>
                 </div>
 
                 <div class="search-box">
-
                     <i class="bi bi-search"></i>
-
-                    <input
-                        type="text"
-                        id="searchInput"
-                        placeholder="Buscar código, ativo, local..."
-                    >
-
+                    <input type="text" placeholder="Buscar código, ativo, local...">
                     <kbd>CTRL K</kbd>
-
                 </div>
 
             </div>
@@ -183,366 +162,696 @@
                     <i class="bi bi-chevron-down"></i>
                 </div>
 
-                <button class="icon-button notification-button">
+                <div class="notification-button icon-button">
                     <i class="bi bi-bell"></i>
                     <span></span>
-                </button>
-
-                <div class="profile">
-
-                    <div class="profile-info">
-                        <strong>Eng. Marcos Silveira</strong>
-                        <small>Supervisor Técnico Sênior</small>
-                    </div>
-
-                    <div class="profile-avatar">
-                        MS
-                    </div>
-
                 </div>
+
+                <details class="profile profile-dropdown">
+
+                    <summary class="profile-trigger">
+
+                        <div class="profile-info">
+                            <strong>Eng. Marcos Silveira</strong>
+                            <small>Supervisor Técnico Sênior</small>
+                        </div>
+
+                        <div class="profile-avatar">MS</div>
+
+                        <i class="bi bi-chevron-down profile-chevron"></i>
+
+                    </summary>
+
+                    <div class="profile-menu">
+                        <a href="#"><i class="bi bi-person"></i> Meu perfil</a>
+                        <a href="#"><i class="bi bi-gear"></i> Configurações</a>
+
+                        <div class="profile-menu-divider"></div>
+
+                        <a href="../login/login.html" class="logout-link">
+                            <i class="bi bi-box-arrow-right"></i> Sair
+                        </a>
+                    </div>
+
+                </details>
 
             </div>
 
         </header>
 
-        <!-- ================= CONTENT ================= -->
-        <main class="dashboard">
+        <!-- PAGE CONTENT -->
+        <main class="page-content">
 
-            <!-- ================= CABEÇALHO ================= -->
+            <!-- CABEÇALHO -->
             <section class="page-header">
 
                 <div>
+                    <span class="page-eyebrow">
+                        <i class="bi bi-calendar3"></i>
+                        GESTÃO DE INSPEÇÕES
+                    </span>
 
-                    <div class="breadcrumb-custom">
-                        Início
-                        <i class="bi bi-chevron-right"></i>
-                        Operações
-                        <i class="bi bi-chevron-right"></i>
-                        <strong>Planejamento de inspeção</strong>
+                    <h1>Planejamento</h1>
+
+                    <p>
+                        Organize, distribua e acompanhe as inspeções programadas da sua operação.
+                    </p>
+                </div>
+
+                <a href="#" class="btn-new-plan">
+                    <i class="bi bi-plus-lg"></i>
+                    Novo planejamento
+                </a>
+
+            </section>
+
+            <!-- INDICADORES -->
+            <section class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-info">
+                        <span>Inspeções programadas</span>
+                        <h3>28</h3>
+                        <small>Para os próximos 7 dias</small>
                     </div>
 
-                    <div class="page-title-row">
-
-                        <div>
-                            <h1>
-                                Planejamento de inspeção
-                            </h1>
-
-                            <p>
-                                Agende uma nova inspeção e defina os responsáveis
-                            </p>
-                        </div>
-
+                    <div class="stat-icon blue">
+                        <i class="bi bi-calendar-check"></i>
                     </div>
 
                 </div>
 
-                <div class="page-actions">
-                    <a href="acompanhamento.html" class="btn btn-light-custom">
-                        <i class="bi bi-arrow-left"></i>
-                        Voltar para inspeções
-                    </a>
+                <div class="stat-card">
+
+                    <div class="stat-info">
+                        <span>Agendadas para hoje</span>
+                        <h3>06</h3>
+                        <small>Inspeções previstas</small>
+                    </div>
+
+                    <div class="stat-icon orange">
+                        <i class="bi bi-clock"></i>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-info">
+                        <span>Em atraso</span>
+                        <h3>03</h3>
+                        <small>Requerem atenção</small>
+                    </div>
+
+                    <div class="stat-icon red">
+                        <i class="bi bi-exclamation-circle"></i>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-info">
+                        <span>Concluídas no mês</span>
+                        <h3>42</h3>
+                        <small>Inspeções finalizadas</small>
+                    </div>
+
+                    <div class="stat-icon green">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+
                 </div>
 
             </section>
 
+            <!-- CALENDÁRIO -->
+            <section class="calendar-panel">
 
-            <!-- ================= FORMULÁRIO ================= -->
-            <div class="row g-4">
+                <div class="panel-header">
 
-                <div class="col-12 col-xl-8">
+                    <div>
+                        <h5>Agenda de inspeções</h5>
+                        <p>Visualize as atividades programadas por dia</p>
+                    </div>
 
-                    <section class="dashboard-card planning-card">
+                    <div class="calendar-actions">
+                        <button class="calendar-nav" type="button">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
 
-                        <div class="card-header-custom">
+                        <strong>23 – 29 Nov, 2026</strong>
 
-                            <div>
-                                <div class="section-icon primary">
-                                    <i class="bi bi-calendar2-plus"></i>
-                                </div>
+                        <button class="calendar-nav" type="button">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
 
-                                <div>
-                                    <h2>Dados da inspeção</h2>
-                                    <p>Preencha as informações para programar a atividade</p>
-                                </div>
-                            </div>
+                        <button class="btn-today" type="button">Hoje</button>
+                    </div>
 
-                            <span class="header-counter">
-                                NOVA INSPEÇÃO
-                            </span>
+                </div>
 
+                <div class="calendar-grid">
+
+                    <!-- SEGUNDA -->
+                    <div class="calendar-day">
+
+                        <div class="day-header">
+                            <span>SEG</span>
+                            <strong>23</strong>
                         </div>
 
-                        <form>
-
-                            <div class="row g-3">
-
-                                <div class="col-12">
-                                    <label for="cliente" class="form-label">
-                                        Cliente <span class="required-mark">*</span>
-                                    </label>
-
-                                    <select id="cliente" class="form-select" required>
-                                        <option value="" selected disabled>Selecione o cliente</option>
-                                        <option>Usina Guaíba</option>
-                                        <option>Complexo Petroquímico Triunfo</option>
-                                        <option>Parque Eólico Osório</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-12 col-md-6">
-                                    <label for="local" class="form-label">
-                                        Local <span class="required-mark">*</span>
-                                    </label>
-
-                                    <select id="local" class="form-select" required>
-                                        <option value="" selected disabled>Selecione o local</option>
-                                        <option>Subestação Norte</option>
-                                        <option>Pavilhão 02</option>
-                                        <option>Caldeiraria</option>
-                                        <option>Bacia de Rejeitos</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-12 col-md-6">
-                                    <label for="equipamento" class="form-label">
-                                        Equipamento <span class="required-mark">*</span>
-                                    </label>
-
-                                    <select id="equipamento" class="form-select" required>
-                                        <option value="" selected disabled>Selecione o equipamento</option>
-                                        <option>Compressor Atlas Copco — CMP-AR-03</option>
-                                        <option>Bomba Centrífuga — BC-RES-04</option>
-                                        <option>Turbina SST-300 — TB-GEN-02-B</option>
-                                        <option>Caldeira CD-01 — BLR-CD-01</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-12">
-                                    <label for="checklist" class="form-label">
-                                        Checklist <span class="required-mark">*</span>
-                                    </label>
-
-                                    <select id="checklist" class="form-select" required>
-                                        <option value="" selected disabled>Selecione o modelo de checklist</option>
-                                        <option>Inspeção de compressor — v1.0</option>
-                                        <option>Inspeção de bomba centrífuga — v1.2</option>
-                                        <option>Inspeção de turbina — v1.0</option>
-                                        <option>Inspeção de caldeira — v1.3</option>
-                                    </select>
-
-                                    <div class="form-text">
-                                        Os modelos disponíveis são exemplos para demonstração do protótipo.
-                                    </div>
-                                </div>
-
-
-                                <div class="col-12 col-md-6">
-                                    <label for="tecnico" class="form-label">
-                                        Técnico responsável <span class="required-mark">*</span>
-                                    </label>
-
-                                    <select id="tecnico" class="form-select" required>
-                                        <option value="" selected disabled>Selecione o técnico</option>
-                                        <option>Marcos Silveira</option>
-                                        <option>Diego Souza</option>
-                                        <option>Leandro Ferreira</option>
-                                        <option>Roberto Mendes</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="col-12 col-md-6">
-                                    <label for="data" class="form-label">
-                                        Data da inspeção <span class="required-mark">*</span>
-                                    </label>
-
-                                    <input
-                                        type="date"
-                                        id="data"
-                                        class="form-control"
-                                        required
-                                    >
-                                </div>
-
-
-                                <div class="col-12">
-                                    <label class="form-label">
-                                        Prioridade <span class="required-mark">*</span>
-                                    </label>
-
-                                    <div class="priority-options">
-
-                                        <label class="priority-option">
-                                            <input
-                                                type="radio"
-                                                name="prioridade"
-                                                value="baixa"
-                                            >
-                                            <span class="priority-dot low"></span>
-                                            Baixa
-                                        </label>
-
-                                        <label class="priority-option">
-                                            <input
-                                                type="radio"
-                                                name="prioridade"
-                                                value="media"
-                                                checked
-                                            >
-                                            <span class="priority-dot medium"></span>
-                                            Média
-                                        </label>
-
-                                        <label class="priority-option">
-                                            <input
-                                                type="radio"
-                                                name="prioridade"
-                                                value="alta"
-                                            >
-                                            <span class="priority-dot high"></span>
-                                            Alta
-                                        </label>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="col-12">
-                                    <label for="observacoes" class="form-label">
-                                        Observações
-                                    </label>
-
-                                    <textarea
-                                        id="observacoes"
-                                        class="form-control"
-                                        rows="4"
-                                        placeholder="Adicione orientações ou informações importantes para a equipe..."
-                                    ></textarea>
-                                </div>
-
+                        <div class="day-events">
+                            <div class="calendar-event blue-event">
+                                <strong>08:00</strong>
+                                <span>Inspeção de bombas</span>
+                                <small>BM-204 · Marcos</small>
                             </div>
 
+                            <div class="calendar-event green-event">
+                                <strong>13:30</strong>
+                                <span>Verificação elétrica</span>
+                                <small>EL-102 · Ana</small>
+                            </div>
+                        </div>
 
-                            <div class="form-footer">
+                    </div>
 
-                                <span class="required-info">
-                                    <span class="required-mark">*</span>
-                                    Campos obrigatórios
-                                </span>
+                    <!-- TERÇA -->
+                    <div class="calendar-day">
 
-                                <div class="form-actions">
-                                    <a href="planejamento.html" class="btn btn-light-custom">
-                                        Cancelar
-                                    </a>
+                        <div class="day-header">
+                            <span>TER</span>
+                            <strong>24</strong>
+                        </div>
 
-                                    <button type="button" class="btn btn-primary-custom">
+                        <div class="day-events">
+                            <div class="calendar-event purple-event">
+                                <strong>09:00</strong>
+                                <span>Inspeção estrutural</span>
+                                <small>ST-018 · Carlos</small>
+                            </div>
+
+                            <div class="calendar-event blue-event">
+                                <strong>14:00</strong>
+                                <span>Rotina de motores</span>
+                                <small>MT-033 · Marcos</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- QUARTA -->
+                    <div class="calendar-day">
+
+                        <div class="day-header">
+                            <span>QUA</span>
+                            <strong>25</strong>
+                        </div>
+
+                        <div class="day-events">
+                            <div class="calendar-event orange-event">
+                                <strong>08:30</strong>
+                                <span>Inspeção de válvulas</span>
+                                <small>VL-041 · Ana</small>
+                            </div>
+
+                            <div class="calendar-event green-event">
+                                <strong>15:00</strong>
+                                <span>Revisão de painel</span>
+                                <small>EL-109 · Carlos</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- QUINTA -->
+                    <div class="calendar-day">
+
+                        <div class="day-header">
+                            <span>QUI</span>
+                            <strong>26</strong>
+                        </div>
+
+                        <div class="day-events">
+                            <div class="calendar-event blue-event">
+                                <strong>10:00</strong>
+                                <span>Manutenção preventiva</span>
+                                <small>BM-211 · Marcos</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SEXTA -->
+                    <div class="calendar-day">
+
+                        <div class="day-header">
+                            <span>SEX</span>
+                            <strong>27</strong>
+                        </div>
+
+                        <div class="day-events">
+                            <div class="calendar-event purple-event">
+                                <strong>08:00</strong>
+                                <span>Inspeção de segurança</span>
+                                <small>SG-006 · Carlos</small>
+                            </div>
+
+                            <div class="calendar-event orange-event">
+                                <strong>11:30</strong>
+                                <span>Verificação de compressor</span>
+                                <small>CP-015 · Ana</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- SÁBADO -->
+                    <div class="calendar-day">
+
+                        <div class="day-header">
+                            <span>SÁB</span>
+                            <strong>28</strong>
+                        </div>
+
+                        <div class="day-events">
+                            <div class="calendar-empty">
+                                <i class="bi bi-dash"></i>
+                                Sem atividades
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- DOMINGO -->
+                    <div class="calendar-day">
+
+                        <div class="day-header">
+                            <span>DOM</span>
+                            <strong>29</strong>
+                        </div>
+
+                        <div class="day-events">
+                            <div class="calendar-empty">
+                                <i class="bi bi-dash"></i>
+                                Sem atividades
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- LEGENDA -->
+                <div class="calendar-legend">
+
+                    <span>
+                        <i class="legend-dot blue-dot"></i>
+                        Mecânica
+                    </span>
+
+                    <span>
+                        <i class="legend-dot green-dot"></i>
+                        Elétrica
+                    </span>
+
+                    <span>
+                        <i class="legend-dot orange-dot"></i>
+                        Preventiva
+                    </span>
+
+                    <span>
+                        <i class="legend-dot purple-dot"></i>
+                        Segurança / Estrutural
+                    </span>
+
+                </div>
+
+            </section>
+
+            <!-- PRÓXIMAS INSPEÇÕES -->
+            <section class="inspections-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h5>Próximas inspeções</h5>
+                        <p>Lista das inspeções previstas para o período</p>
+                    </div>
+
+                    <a href="../acompanhamento/acompanhamento.html" class="btn-view-all">
+                        Ver inspeções
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+
+                <!-- FILTROS -->
+                <div class="filters-row">
+
+                    <div class="filter-search">
+                        <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Buscar inspeção, equipamento ou responsável">
+                    </div>
+
+                    <select class="filter-select">
+                        <option selected>Todos os status</option>
+                        <option>Agendada</option>
+                        <option>Em andamento</option>
+                        <option>Concluída</option>
+                        <option>Atrasada</option>
+                    </select>
+
+                    <select class="filter-select">
+                        <option selected>Todos os responsáveis</option>
+                        <option>Marcos Silveira</option>
+                        <option>Ana Oliveira</option>
+                        <option>Carlos Mendes</option>
+                    </select>
+
+                </div>
+
+                <!-- TABELA -->
+                <div class="table-responsive">
+
+                    <table class="planning-table">
+
+                        <thead>
+                            <tr>
+                                <th>INSPEÇÃO</th>
+                                <th>EQUIPAMENTO</th>
+                                <th>LOCAL</th>
+                                <th>RESPONSÁVEL</th>
+                                <th>DATA / HORÁRIO</th>
+                                <th>STATUS</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>
+                                    <div class="inspection-name">
+                                        <strong>Inspeção de bombas</strong>
+                                        <small>PLN-2026-084</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="equipment-code">BM-204</span>
+                                    <small class="cell-subtitle">Bomba centrífuga</small>
+                                </td>
+
+                                <td>
+                                    <span>Casa de bombas A</span>
+                                </td>
+
+                                <td>
+                                    <div class="responsible">
+                                        <div class="avatar blue-avatar">MS</div>
+                                        <span>Marcos Silveira</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="date-cell">
+                                        <strong>23 Nov, 2026</strong>
+                                        <small>08:00</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge scheduled">
                                         <i class="bi bi-calendar-check"></i>
-                                        Agendar inspeção
-                                    </button>
-                                </div>
+                                        Agendada
+                                    </span>
+                                </td>
 
-                            </div>
+                                <td>
+                                    <a href="#" class="row-action"><i class="bi bi-three-dots"></i></a>
+                                </td>
+                            </tr>
 
-                        </form>
+                            <tr>
+                                <td>
+                                    <div class="inspection-name">
+                                        <strong>Verificação elétrica</strong>
+                                        <small>PLN-2026-085</small>
+                                    </div>
+                                </td>
 
-                    </section>
+                                <td>
+                                    <span class="equipment-code">EL-102</span>
+                                    <small class="cell-subtitle">Painel elétrico</small>
+                                </td>
+
+                                <td>
+                                    <span>Subestação 02</span>
+                                </td>
+
+                                <td>
+                                    <div class="responsible">
+                                        <div class="avatar green-avatar">AO</div>
+                                        <span>Ana Oliveira</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="date-cell">
+                                        <strong>23 Nov, 2026</strong>
+                                        <small>13:30</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge scheduled">
+                                        <i class="bi bi-calendar-check"></i>
+                                        Agendada
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action"><i class="bi bi-three-dots"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="inspection-name">
+                                        <strong>Inspeção estrutural</strong>
+                                        <small>PLN-2026-086</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="equipment-code">ST-018</span>
+                                    <small class="cell-subtitle">Estrutura metálica</small>
+                                </td>
+
+                                <td>
+                                    <span>Galpão industrial B</span>
+                                </td>
+
+                                <td>
+                                    <div class="responsible">
+                                        <div class="avatar purple-avatar">CM</div>
+                                        <span>Carlos Mendes</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="date-cell">
+                                        <strong>24 Nov, 2026</strong>
+                                        <small>09:00</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge scheduled">
+                                        <i class="bi bi-calendar-check"></i>
+                                        Agendada
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action"><i class="bi bi-three-dots"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="inspection-name">
+                                        <strong>Rotina de motores</strong>
+                                        <small>PLN-2026-087</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="equipment-code">MT-033</span>
+                                    <small class="cell-subtitle">Motor industrial</small>
+                                </td>
+
+                                <td>
+                                    <span>Linha de produção 01</span>
+                                </td>
+
+                                <td>
+                                    <div class="responsible">
+                                        <div class="avatar blue-avatar">MS</div>
+                                        <span>Marcos Silveira</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="date-cell">
+                                        <strong>24 Nov, 2026</strong>
+                                        <small>14:00</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge scheduled">
+                                        <i class="bi bi-calendar-check"></i>
+                                        Agendada
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action"><i class="bi bi-three-dots"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="inspection-name">
+                                        <strong>Inspeção de válvulas</strong>
+                                        <small>PLN-2026-088</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="equipment-code">VL-041</span>
+                                    <small class="cell-subtitle">Válvula de pressão</small>
+                                </td>
+
+                                <td>
+                                    <span>Setor de utilidades</span>
+                                </td>
+
+                                <td>
+                                    <div class="responsible">
+                                        <div class="avatar green-avatar">AO</div>
+                                        <span>Ana Oliveira</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="date-cell">
+                                        <strong>25 Nov, 2026</strong>
+                                        <small>08:30</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge scheduled">
+                                        <i class="bi bi-calendar-check"></i>
+                                        Agendada
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action"><i class="bi bi-three-dots"></i></a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div class="inspection-name">
+                                        <strong>Revisão de painel</strong>
+                                        <small>PLN-2026-089</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="equipment-code">EL-109</span>
+                                    <small class="cell-subtitle">Quadro de distribuição</small>
+                                </td>
+
+                                <td>
+                                    <span>Área de controle</span>
+                                </td>
+
+                                <td>
+                                    <div class="responsible">
+                                        <div class="avatar purple-avatar">CM</div>
+                                        <span>Carlos Mendes</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="date-cell">
+                                        <strong>25 Nov, 2026</strong>
+                                        <small>15:00</small>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge scheduled">
+                                        <i class="bi bi-calendar-check"></i>
+                                        Agendada
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action"><i class="bi bi-three-dots"></i></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
 
                 </div>
 
+                <!-- FOOTER DA TABELA -->
+                <div class="table-footer">
 
-                <!-- ================= RESUMO LATERAL ================= -->
-                <div class="col-12 col-xl-4">
+                    <span>Mostrando <strong>6</strong> de <strong>28</strong> inspeções</span>
 
-                    <section class="dashboard-card mb-4">
+                    <div class="pagination">
 
-                        <div class="card-header-custom">
+                        <button class="page-btn disabled">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
 
-                            <div>
-                                <div class="section-icon primary">
-                                    <i class="bi bi-info-circle"></i>
-                                </div>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <span>...</span>
+                        <button class="page-btn">5</button>
 
-                                <div>
-                                    <h2>Orientações</h2>
-                                    <p>Antes de concluir o agendamento</p>
-                                </div>
-                            </div>
+                        <button class="page-btn">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
 
-                        </div>
-
-                        <div class="planning-tips">
-
-                            <div class="planning-tip">
-                                <i class="bi bi-check-circle"></i>
-                                <div>
-                                    <strong>Confira o equipamento</strong>
-                                    <p>Verifique se o ativo selecionado corresponde ao local da inspeção.</p>
-                                </div>
-                            </div>
-
-                            <div class="planning-tip">
-                                <i class="bi bi-clipboard-check"></i>
-                                <div>
-                                    <strong>Selecione o checklist correto</strong>
-                                    <p>Utilize o modelo adequado para o tipo de equipamento.</p>
-                                </div>
-                            </div>
-
-                            <div class="planning-tip">
-                                <i class="bi bi-person-check"></i>
-                                <div>
-                                    <strong>Defina o responsável</strong>
-                                    <p>Escolha o técnico que ficará encarregado da atividade.</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </section>
-
-
-                    <section class="dashboard-card">
-
-                        <div class="card-header-custom">
-
-                            <div>
-                                <div class="section-icon primary">
-                                    <i class="bi bi-calendar-week"></i>
-                                </div>
-
-                                <div>
-                                    <h2>Resumo do agendamento</h2>
-                                    <p>Informações selecionadas</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="summary-placeholder">
-                            <i class="bi bi-clipboard2-plus"></i>
-                            <strong>Nenhuma inspeção agendada</strong>
-                            <span>Preencha o formulário para configurar uma nova atividade.</span>
-                        </div>
-
-                    </section>
+                    </div>
 
                 </div>
 
-            </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="page-footer">
+                <span>FieldOps Enterprise System</span>
+                <span>© 2026 · Plataforma de Inspeção em Campo</span>
+            </footer>
 
         </main>
 
     </div>
-
-
-    <!-- Bootstrap JS -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
 
 </body>
 </html>

@@ -33,9 +33,8 @@ Nunca monte um menu do zero. Nunca invente ícone ou ordem de item.
 | Equipamentos | `equipamentos.html` |
 | Clientes | `clientes.html` |
 | Locais | `locais.html` |
-| Não conformidades | `#` (sem tela ainda) |
-| Histórico | `#` (sem tela ainda) |
-| Usuários | `#` (sem tela ainda) |
+| Não conformidades | `conformidades.html` |
+| Histórico | `historico.html` |
 
 - Item sem tela ainda = `href="#"`. Não aponte pra arquivo que não existe (dá 404)
 - Badges (`14` inspeções, `3` NCs) são parte do padrão, mantenha

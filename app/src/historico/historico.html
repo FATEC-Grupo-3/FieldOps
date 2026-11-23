@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Histórico | FieldOps</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./historico.css">
+    <link rel="stylesheet" href="../dashboard/navigation.css">
+</head>
+
+<body>
+
+    <input type="checkbox" id="sidebarToggle" class="sidebar-toggle">
+    <label for="sidebarToggle" class="sidebar-overlay"></label>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <div class="brand-icon">
+                <i class="bi bi-boxes"></i>
+            </div>
+
+            <div class="brand-text">
+                <h5>FieldOps</h5>
+                <span>Enterprise System</span>
+            </div>
+
+            <label for="sidebarToggle" class="btn-close-sidebar">
+                <i class="bi bi-x-lg"></i>
+            </label>
+        </div>
+
+        <div class="sidebar-section-title">
+            MÓDULOS PRINCIPAIS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="../dashboard/dashboard.html" class="nav-item">
+                <i class="bi bi-grid-1x2"></i>
+                <span>Visão geral</span>
+            </a>
+
+            <a href="../acompanhamento/acompanhamento.html" class="nav-item">
+                <i class="bi bi-clipboard-check"></i>
+                <span>Inspeções</span>
+                <span class="nav-badge">14</span>
+            </a>
+
+            <a href="../planejamento/planejamento.html" class="nav-item">
+                <i class="bi bi-calendar3"></i>
+                <span>Planejamento</span>
+            </a>
+
+            <a href="../modelos/modelos.html" class="nav-item">
+                <i class="bi bi-file-earmark-text"></i>
+                <span>Modelos</span>
+            </a>
+
+            <a href="../equipamentos/equipamentos.html" class="nav-item">
+                <i class="bi bi-box-seam"></i>
+                <span>Equipamentos</span>
+            </a>
+
+            <a href="../clients/clients.html" class="nav-item">
+                <i class="bi bi-buildings"></i>
+                <span>Clientes</span>
+            </a>
+
+            <a href="../locais/locais.html" class="nav-item">
+                <i class="bi bi-geo-alt"></i>
+                <span>Locais</span>
+            </a>
+
+            <a href="../conformidades/conformidades.html" class="nav-item">
+                <i class="bi bi-exclamation-triangle"></i>
+                <span>Não conformidades</span>
+                <span class="nav-badge danger">3</span>
+            </a>
+
+            <a href="./historico.html" class="nav-item active">
+                <i class="bi bi-clock-history"></i>
+                <span>Histórico</span>
+            </a>
+
+        </nav>
+
+        <!-- RODAPÉ SIDEBAR -->
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <span>Sistema operacional</span>
+            </div>
+
+            <div class="security-status">
+                <i class="bi bi-shield-check"></i>
+                Ambiente seguro
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-wrapper">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <label for="sidebarToggle" class="mobile-menu">
+                    <i class="bi bi-list"></i>
+                </label>
+
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    Sincronização
+                    <strong>Ativa</strong>
+                </div>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Buscar código, ativo, local...">
+                    <kbd>CTRL K</kbd>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="unit-selector">
+                    <i class="bi bi-building"></i>
+
+                    <div>
+                        <small>Unidade</small>
+                        <strong>Complexo Industrial Sul</strong>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+
+                <div class="notification-button icon-button">
+                    <i class="bi bi-bell"></i>
+                    <span></span>
+                </div>
+
+                <div class="dropdown profile">
+                    <div class="profile-info" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">
+                        <strong>Eng. Marcos Silveira</strong>
+                        <small>Supervisor Técnico Sênior</small>
+                    </div>
+                    <div class="profile-avatar" data-bs-toggle="dropdown" aria-expanded="false" style="cursor:pointer;">MS</div>
+                    <i class="bi bi-chevron-down profile-arrow"></i>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Meu perfil</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear"></i> Configurações</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="../login/login.html"><i class="bi bi-box-arrow-right"></i> Sair</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PÁGINA -->
+        <main class="page-content">
+
+            <!-- CABEÇALHO -->
+            <section class="page-header">
+
+                <div>
+                    <div class="page-eyebrow">
+                        <i class="bi bi-clock-history"></i>
+                        RASTREABILIDADE DO SISTEMA
+                    </div>
+
+                    <h1>Histórico de atividades</h1>
+
+                    <p class="page-description">
+                        Consulte as ações realizadas pelos usuários e acompanhe
+                        o histórico das inspeções.
+                    </p>
+                </div>
+
+                <div class="header-actions">
+                    <button class="btn-export" type="button">
+                        <i class="bi bi-download"></i>
+                        Exportar histórico
+                    </button>
+                </div>
+
+            </section>
+
+
+            <!-- ALERTA INFORMATIVO -->
+            <section class="info-banner">
+
+                <div class="info-banner-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+
+                <div class="info-banner-text">
+                    <strong>Registro de rastreabilidade</strong>
+                    <p>
+                        As atividades são apresentadas com identificação do usuário,
+                        data, horário e ação realizada.
+                    </p>
+                </div>
+
+                <span class="info-banner-label">
+                    <i class="bi bi-lock"></i>
+                    Auditoria
+                </span>
+
+            </section>
+
+
+            <!-- INDICADORES -->
+            <section class="stats-grid">
+
+                <!-- ATIVIDADES -->
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span class="stat-label">Atividades registradas</span>
+
+                        <div class="stat-icon blue">
+                            <i class="bi bi-activity"></i>
+                        </div>
+                    </div>
+
+                    <h2>248</h2>
+
+                    <div class="stat-footer">
+                        <span class="stat-caption">Registros neste mês</span>
+                    </div>
+
+                </article>
+
+
+                <!-- FINALIZADAS -->
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span class="stat-label">Inspeções finalizadas</span>
+
+                        <div class="stat-icon green">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                    </div>
+
+                    <h2>36</h2>
+
+                    <div class="stat-footer">
+                        <span class="stat-caption">Conclusões registradas</span>
+                    </div>
+
+                </article>
+
+
+                <!-- REVISÕES -->
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span class="stat-label">Revisões realizadas</span>
+
+                        <div class="stat-icon purple">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                    </div>
+
+                    <h2>21</h2>
+
+                    <div class="stat-footer">
+                        <span class="stat-caption">Análises de supervisores</span>
+                    </div>
+
+                </article>
+
+
+                <!-- ALTERAÇÕES -->
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span class="stat-label">Alterações registradas</span>
+
+                        <div class="stat-icon orange">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+                    </div>
+
+                    <h2>54</h2>
+
+                    <div class="stat-footer">
+                        <span class="stat-caption">Atualizações no sistema</span>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- FILTROS -->
+            <section class="filter-panel">
+
+                <div class="filter-header">
+
+                    <div>
+                        <h3>
+                            <i class="bi bi-funnel"></i>
+                            Filtrar histórico
+                        </h3>
+
+                        <p>Localize registros por atividade, usuário ou período.</p>
+                    </div>
+
+                    <span class="filter-info">
+                        <i class="bi bi-sliders"></i>
+                        Filtros
+                    </span>
+
+                </div>
+
+
+                <div class="filter-grid">
+
+                    <!-- PESQUISA -->
+                    <div class="filter-field search-field">
+                        <label for="searchHistory">Pesquisar</label>
+
+                        <div class="input-wrapper">
+                            <i class="bi bi-search"></i>
+
+                            <input type="search" id="searchHistory"
+                                   placeholder="Inspeção, usuário ou descrição...">
+                        </div>
+                    </div>
+
+
+                    <!-- TIPO DE AÇÃO -->
+                    <div class="filter-field">
+                        <label for="activityType">Tipo de atividade</label>
+
+                        <select id="activityType">
+                            <option value="">Todas as atividades</option>
+                            <option>Início de inspeção</option>
+                            <option>Foto adicionada</option>
+                            <option>Inspeção finalizada</option>
+                            <option>Inspeção revisada</option>
+                            <option>Inspeção aprovada</option>
+                            <option>Correção solicitada</option>
+                            <option>Dados alterados</option>
+                        </select>
+                    </div>
+
+
+                    <!-- USUÁRIO -->
+                    <div class="filter-field">
+                        <label for="historyUser">Usuário</label>
+
+                        <select id="historyUser">
+                            <option value="">Todos os usuários</option>
+                            <option>Lucas Ferreira</option>
+                            <option>João Mendes</option>
+                            <option>Pedro Costa</option>
+                            <option>Rafael Freitas</option>
+                        </select>
+                    </div>
+
+
+                    <!-- PERÍODO -->
+                    <div class="filter-field">
+                        <label for="historyDate">Período</label>
+
+                        <select id="historyDate">
+                            <option value="">Todo o período</option>
+                            <option>Hoje</option>
+                            <option>Últimos 7 dias</option>
+                            <option>Últimos 30 dias</option>
+                            <option>Este mês</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="filter-actions">
+
+                    <button class="btn-clear" type="reset">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        Limpar filtros
+                    </button>
+
+                    <button class="btn-filter" type="button">
+                        <i class="bi bi-search"></i>
+                        Aplicar filtros
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- HISTÓRICO -->
+            <section class="history-panel">
+
+                <div class="history-header">
+
+                    <div>
+                        <h3>Registro de atividades</h3>
+                        <p>Eventos registrados durante as operações do FieldOps.</p>
+                    </div>
+
+                    <div class="history-total">
+                        <span class="total-number">248</span>
+                        <span>registros</span>
+                    </div>
+
+                </div>
+
+
+                <!-- LISTA DE EVENTOS -->
+                <div class="table-responsive">
+
+                    <table class="history-table">
+
+                        <thead>
+                            <tr>
+                                <th>DATA E HORÁRIO</th>
+                                <th>USUÁRIO</th>
+                                <th>ATIVIDADE</th>
+                                <th>INSPEÇÃO</th>
+                                <th>DESCRIÇÃO</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+
+                            <!-- REGISTRO 1 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>23 nov, 10:42</strong>
+                                        <span>Hoje</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-blue">LF</div>
+                                        <span>Lucas Ferreira</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon approved">
+                                            <i class="bi bi-check2-circle"></i>
+                                        </div>
+
+                                        <span class="activity-label approved-text">
+                                            Inspeção aprovada
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0248</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Inspeção aprovada pelo supervisor.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- REGISTRO 2 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>23 nov, 10:18</strong>
+                                        <span>Hoje</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-purple">JM</div>
+                                        <span>João Mendes</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon review">
+                                            <i class="bi bi-eye"></i>
+                                        </div>
+
+                                        <span class="activity-label review-text">
+                                            Inspeção revisada
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0247</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Revisão técnica concluída.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- REGISTRO 3 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>23 nov, 09:56</strong>
+                                        <span>Hoje</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-green">PC</div>
+                                        <span>Pedro Costa</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon photo">
+                                            <i class="bi bi-camera"></i>
+                                        </div>
+
+                                        <span class="activity-label photo-text">
+                                            Foto adicionada
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0246</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Evidência fotográfica anexada.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- REGISTRO 4 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>23 nov, 09:31</strong>
+                                        <span>Hoje</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-orange">RF</div>
+                                        <span>Rafael Freitas</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon correction">
+                                            <i class="bi bi-arrow-counterclockwise"></i>
+                                        </div>
+
+                                        <span class="activity-label correction-text">
+                                            Correção solicitada
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0245</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Solicitados ajustes nos itens da inspeção.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- REGISTRO 5 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>23 nov, 09:05</strong>
+                                        <span>Hoje</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-blue">LF</div>
+                                        <span>Lucas Ferreira</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon completed">
+                                            <i class="bi bi-clipboard-check"></i>
+                                        </div>
+
+                                        <span class="activity-label completed-text">
+                                            Inspeção finalizada
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0248</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Inspeção enviada para revisão.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- REGISTRO 6 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>23 nov, 08:47</strong>
+                                        <span>Hoje</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-purple">JM</div>
+                                        <span>João Mendes</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon started">
+                                            <i class="bi bi-play-circle"></i>
+                                        </div>
+
+                                        <span class="activity-label started-text">
+                                            Inspeção iniciada
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0249</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Início da inspeção em campo.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- REGISTRO 7 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>22 nov, 17:26</strong>
+                                        <span>Ontem</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-green">PC</div>
+                                        <span>Pedro Costa</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon photo">
+                                            <i class="bi bi-camera"></i>
+                                        </div>
+
+                                        <span class="activity-label photo-text">
+                                            Foto adicionada
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0242</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Foto do equipamento anexada ao registro.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <!-- REGISTRO 8 -->
+                            <tr>
+
+                                <td>
+                                    <div class="date-info">
+                                        <strong>22 nov, 16:54</strong>
+                                        <span>Ontem</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <div class="mini-avatar avatar-orange">RF</div>
+                                        <span>Rafael Freitas</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="activity-cell">
+                                        <div class="activity-icon changed">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </div>
+
+                                        <span class="activity-label changed-text">
+                                            Dados alterados
+                                        </span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="inspection-code">INS-0242</span>
+                                </td>
+
+                                <td>
+                                    <span class="description-text">
+                                        Atualização das informações do registro.
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#" class="row-action" aria-label="Ver registro">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+                <!-- PAGINAÇÃO -->
+                <div class="table-footer">
+
+                    <span class="table-footer-info">
+                        Exibindo <strong>1–8</strong> de <strong>248</strong> registros
+                    </span>
+
+                    <div class="pagination-custom">
+
+                        <a href="#" class="pagination-btn disabled">
+                            <i class="bi bi-chevron-left"></i>
+                        </a>
+
+                        <a href="#" class="pagination-btn active">1</a>
+                        <a href="#" class="pagination-btn">2</a>
+                        <a href="#" class="pagination-btn">3</a>
+                        <span class="pagination-ellipsis">...</span>
+                        <a href="#" class="pagination-btn">31</a>
+
+                        <a href="#" class="pagination-btn">
+                            <i class="bi bi-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="page-footer">
+
+                <span>
+                    FieldOps
+                    <span class="footer-separator">/</span>
+                    Plataforma de Inspeção em Campo
+                </span>
+
+                <span>Interface demonstrativa · 2026</span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

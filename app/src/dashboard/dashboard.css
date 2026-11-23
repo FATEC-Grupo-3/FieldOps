@@ -517,6 +517,11 @@ h1, h2, h3, h4, h5, p {
     font-size: 9px;
 }
 
+.profile-arrow {
+    color: var(--text-light);
+    font-size: 10px;
+}
+
 .profile-avatar {
     width: 36px;
     height: 36px;
