@@ -1399,6 +1399,12 @@ h1, h2, h3, h4, h5, p {
         white-space: normal;
     }
 
+    /* ---- Anti-overflow: garante que nada estoura 390px ---- */
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    .topbar { min-width: 0; max-width: 100%; }
+    .unit-selector { display: none; }
+    .topbar-right .btn-notification { display: none; }
+
     /* ---- Topbar: empilha e fluidifica ---- */
     .topbar { flex-wrap: wrap; gap: 8px; height: auto; padding: 10px 14px; }
     .topbar-left, .topbar-right { white-space: normal; flex-shrink: 1; min-width: 0; }
