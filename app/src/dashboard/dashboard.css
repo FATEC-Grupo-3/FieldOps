@@ -1307,3 +1307,113 @@ h1, h2, h3, h4, h5, p {
     display: flex;
     align-items: center;
     justify-conte
+
+
+/* =========================
+   RESPONSIVIDADE MOBILE (max-width: 768px)
+   Menu vira gaveta (checkbox hack ja presente no HTML),
+   grids empilham, larguras fixas viram fluidas.
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* ---- Sidebar vira gaveta off-canvas ---- */
+    .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        width: 260px;
+        z-index: 1100;
+    }
+
+    /* abre quando o checkbox (menu hamburger) esta marcado */
+    .sidebar-toggle:checked ~ .sidebar {
+        transform: translateX(0);
+    }
+
+    /* overlay escuro quando aberto */
+    .sidebar-toggle:checked ~ .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+    }
+
+    /* botao hamburger visivel no mobile */
+    .mobile-menu {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+        color: var(--text);
+        cursor: pointer;
+    }
+
+    .btn-close-sidebar {
+        display: inline-flex;
+    }
+
+    /* conteudo principal ocupa a tela toda */
+    .main-wrapper {
+        margin-left: 0;
+    }
+
+    .dashboard {
+        padding: 16px 14px 32px;
+        max-width: 100%;
+    }
+
+    /* ---- Cabecalho / search ---- */
+    .fo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* ---- Cards de metricas empilham ---- */
+    .fo-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+    }
+
+    /* ---- Grids principais viram 1 coluna ---- */
+    .fo-main-grid,
+    .fo-secondary-grid,
+    .fo-metrics-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ---- Tabelas: scroll horizontal em vez de quebrar ---- */
+    .table-responsive,
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    /* ---- Grafico de barras: altura menor, colunas folhadas ---- */
+    .fo-chart {
+        gap: 6px;
+    }
+
+    .fo-chart-column {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .fo-stats {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .dashboard {
+        padding: 12px 10px 28px;
+    }
+}
