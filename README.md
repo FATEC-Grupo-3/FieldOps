@@ -28,7 +28,6 @@ O projeto busca substituir processos manuais, como formulários impressos, plani
 * 🔳 Identificação de equipamentos por QR Code
 * 📍 Registro de localização
 * ⚠️ Registro de não conformidades
-* 📡 Funcionamento offline
 * 🔄 Sincronização das informações
 * ✅ Revisão e aprovação das inspeções
 
@@ -38,7 +37,7 @@ Tornar as inspeções de campo mais **rápidas, organizadas e confiáveis**, red
 
 ## 👥 Integrantes
 
-* **Bruno Couto**
+* **Bruno Mattos**
 * **Gabriel Bello**
 * **Tiago Moreira**
 * **João Boquini**
@@ -60,4 +59,6 @@ Tornar as inspeções de campo mais **rápidas, organizadas e confiáveis**, red
 * **GitHub Pages (prototipo):** https://fatec-grupo-3.github.io/FieldOps/
 * **GitHub Project:** https://github.com/orgs/FATEC-Grupo-3/projects/1
 * **Pull Requests:** https://github.com/FATEC-Grupo-3/FieldOps/pulls?q=is%3Apr
+* **Versao Angular (repo):** https://github.com/FATEC-Grupo-3/FieldOps-Angular
+* **Versao Angular (Pages):** https://fatec-grupo-3.github.io/FieldOps-Angular/
 * **Tecnologias:** HTML5, CSS3, Bootstrap 5 (prototipo) - Angular 17 (versao aplicacao)
